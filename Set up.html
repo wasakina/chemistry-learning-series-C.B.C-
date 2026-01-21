@@ -1,0 +1,3473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <title>UACE and UCE Compentecy Based Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+  <!-- Theme Colors -->
+  <meta name="theme-color" content="#6a1b9a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<script>
+document.getElementById("siteLogo").onerror = function () {
+  this.onerror = null;
+  this.src = "https://i.imgur.com/AQMqGix.png";
+};
+</script>
+
+  <style>
+/* Logo Header */
+.cls-logo-header {
+  width: auto;
+  text-align: center;
+  padding: 10px 0 14px 0;
+  background: #f5f0fb;
+  border-bottom: 2px solid #6a1b9a;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Circular Logo */
+.cls-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 80%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 6px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Title Text */
+.cls-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #6a1b9a;
+  letter-spacing: 1px;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Responsive tweak for small screens */
+@media (max-width: 600px) {
+  .cls-logo {
+    width: auto;
+    height: auto;
+  }
+  .cls-title {
+    font-size: 20px;
+  }
+}
+
+/* Fake browser theme color bar for Google Sites */
+.fake-theme-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: #6a1b9a;
+  z-index: 99999;
+}
+.site-logo {
+  display: block;
+  margin: 10px auto;
+  width: 120px;
+  height: 120px;
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+}
+ body {
+      font-family: sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #66004e;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 1em;
+    }
+    button {
+      background-color: #66004e;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #004d40;
+    }
+    .hidden {
+      display: none;
+    }
+    table {
+      width: 100%;
+      background: white;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+    th {
+      background: #e0f2f1;
+    }
+.contacts {
+  margin-top: 10px;
+}
+.contacts a {
+  margin-right: 10px;
+}
+
+
+
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BODY */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* COMMON */
+.hidden { display: none; }
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #66004e;
+  color: #fff;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+button:hover {
+  background: #8900b3;
+}
+
+input {
+  padding: 12px;
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* LOGIN PAGE */
+#login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  background: #ffffff;
+  padding: 35px;
+  max-width: 420px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.login-box h2 {
+  color: #66004e;
+  margin-bottom: 10px;
+}
+
+.login-box p {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+/* HEADER */
+header {
+  background: #66004e;
+  color: #fff;
+  padding: 20px;
+}
+
+header h2 {
+  margin-bottom: 5px;
+}
+
+/* MAIN */
+.container {
+  padding: 20px;
+}
+
+/* CARDS */
+.card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* SECTIONS */
+.section button {
+  width: 100%;
+  text-align: left;
+background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #000;
+  font-weight: bold;
+}
+
+.section button:hover {
+  background: #ddd;
+}
+
+.section-content {
+  display: none;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+    font-size: 18px;
+/* =========================
+   Chemistry Image Styling
+   ========================= */
+
+.chem-img {
+  max-width: 70%;
+  height: auto;                 /* ✅ maintain aspect ratio */
+  display: block;
+  margin: 12px auto;
+  border-radius: 4px;           /* cleaner than 1px */
+  border: 1px solid #bfbfbf;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: zoom-in;
+}
+
+/* Hover effect */
+.chem-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Prevent drag & selection (basic protection) */
+.section-content img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* =========================
+   Image Wrapper & Caption
+   ========================= */
+
+.img-wrap {
+  position: relative;
+  display: block;               /* better centering */
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.img-caption {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show caption on hover */
+.img-wrap:hover .img-caption {
+  opacity: 1;
+}
+
+
+  /* COPY PROTECTION */
+  user-select: none;           /* disable text selection */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.section {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 6px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Disable image dragging */
+img {
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+/* =========================
+   PRINT BLOCKING
+   ========================= */
+@media print {
+  body * {
+    display: none !important;
+  }
+
+  body::before {
+    content: "🚫 Printing and copying are disabled.\A This material is protected by Chemistry Learning Series.";
+    white-space: pre-line;
+    display: block;
+    text-align: center;
+    font-size: 22px;
+    padding-top: 200px;
+    color: red;
+  }
+}
+.note-card {
+  background: #f9fbfd;
+  border-left: 4px solid #2a7fff;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 17px;
+  font color: red;
+}
+/* =========================
+   MathJax – Small Screen Support
+   ========================= */
+
+.section-content mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  display: block;
+  padding: 6px 0;
+}
+
+/* Hide ugly scrollbar but keep scrolling */
+.section-content mjx-container::-webkit-scrollbar {
+  height: 4px;
+}
+
+.section-content mjx-container::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+@media (max-width: 600px) {
+  .section-content mjx-container {
+    font-size: 0.85em;
+  }
+}
+.chem-video, .yt-video {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.yt-video {
+  display: none;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+.chem-video, .yt-video {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.yt-video {
+  display: none;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+.red-line {
+  border: none;
+  height: 6px;          /* thickness */
+  background-color: red;
+  margin: 15px 0;
+  border-radius: 4px;  /* smooth edges */
+}
+
+.toc-box {
+  background: #f5f7fa;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-list li {
+  margin: 6px 0;
+}
+
+.toc-list a {
+  text-decoration: none;
+  color: #0066cc;
+  font-weight: 600;
+}
+
+.toc-list a:hover {
+  text-decoration: underline;
+}
+
+/* Floating Back Button */
+.back-toc {
+  position: sticky;
+  bottom: 15px;
+  float: right;
+  background: #0066cc;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 13px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.back-toc:hover {
+  background: #004a99;
+}
+
+/* Floating Back-to-Contents Button */
+.back-toc-floating {
+  position: sticky;           /* keeps it inside the card */
+  float: right;
+  bottom: 20px;
+  margin-top: 40px;
+  padding: 10px 14px;
+  background: #6a1b9a;        /* purple tone */
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  z-index: 10;
+}
+
+.back-toc-floating:hover {
+  background: #4a148c;
+}
+
+/* AUTHOR SECTION */
+.author-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: #f5f7fa;
+  border-top: 2px solid #6a1b9a;
+  border-radius: 0 0 8px 8px;
+  padding: 15px;
+  margin-top: 25px;
+}
+
+.author-avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #6a1b9a;
+  margin-right: 15px;
+}
+
+.author-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.author-name {
+  font-weight: bold;
+  font-size: 16px;
+  color: #6a1b9a;
+  margin-bottom: 2px;
+}
+
+.author-role {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.author-info a {
+  color: #6a1b9a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.author-info a:hover {
+  text-decoration: underline;
+}
+
+.author-socials {
+  margin-top: 8px;
+}
+
+.author-socials a img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* FLOATING CONTACT BUTTON */
+.author-float-btn {
+  position: sticky;
+  float: right;
+  bottom: 20px;
+  background: #6a1b9a;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  z-index: 999;
+}
+
+.author-float-btn:hover {
+  background: #4a148c;
+}
+
+/* Legal Section Container */
+#legalSection {
+  display: none;
+  padding: 24px 28px;
+  margin-top: 30px;
+  background: linear-gradient(135deg, #f3e5f5, #ede7f6);
+  border-top: 4px solid #6a1b9a;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(106, 27, 154, 0.15);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Main Heading */
+#legalSection h3 {
+  margin-bottom: 16px;
+  color: #4a148c;
+  font-size: 22px;
+  border-bottom: 2px solid #d1c4e9;
+  padding-bottom: 6px;
+}
+
+/* Section Headings */
+#legalSection h4 {
+  margin-top: 22px;
+  margin-bottom: 8px;
+  color: #311b92;
+  font-size: 18px;
+}
+
+/* Paragraphs */
+#legalSection p {
+  line-height: 1.7;
+  font-size: 15.5px;
+  color: #333;
+  margin-bottom: 14px;
+}
+
+/* Footer Links (where user clicks) */
+footer a {
+  color: #6a1b9a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #4a148c;
+}
+
+/* Smooth reveal animation */
+#legalSection.show {
+  display: block;
+  animation: fadeSlideIn 0.6s ease;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional: Responsive spacing */
+@media (max-width: 600px) {
+  #legalSection {
+    padding: 18px 16px;
+  }
+
+  #legalSection h3 {
+    font-size: 20px;
+  }
+
+  #legalSection h4 {
+    font-size: 17px;
+  }
+
+  #legalSection p {
+    font-size: 15px;
+  }
+}
+.back-toc-floating {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #6a1b9a;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  z-index: 9999;
+}
+
+.back-toc-floating:hover {
+  background: #4a148c;
+}
+
+</style>
+<script>
+(function(){
+  const logo = document.getElementById("siteLogo");
+  if (!logo) return;
+
+  const testImg = new Image();
+  testImg.onload = () => {
+    logo.src = "images/logo.png";
+  };
+  testImg.onerror = () => {
+    logo.src = "https://yourdomain.com/logo.png";
+  };
+  testImg.src = "images/logo.png";
+})();
+</script>
+
+
+<script>
+function showYouTube(id) {
+  const video = document.getElementById("video" + id);
+  const yt = document.getElementById("yt" + id);
+
+  if (video) video.style.display = "none";
+  if (yt) yt.style.display = "block";
+}
+</script>
+<script>
+(function () {
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+
+  /* Try ONLINE first */
+  script.src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js";
+
+  /* If online fails, load OFFLINE */
+  script.onerror = function () {
+    this.src = "js/mathjax/tex-mml-chtml.js";
+  };
+
+  document.head.appendChild(script);
+})();
+</script>
+
+<script>
+/* =========================
+   BLOCK KEYBOARD SHORTCUTS
+   ========================= */
+document.addEventListener("keydown", function (e) {
+
+  /* Block print */
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "p") {
+    e.preventDefault();
+    alert("🚫 Printing is disabled.");
+  }
+
+  /* Block copy */
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "c") {
+    e.preventDefault();
+    alert("🚫 Copying is disabled.");
+  }
+
+  /* Block select all */
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "a") {
+    e.preventDefault();
+    alert("🚫 Selection is disabled.");
+  }
+
+  /* Block save */
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
+    e.preventDefault();
+    alert("🚫 Saving is disabled.");
+  }
+});
+
+/* Block right-click menu */
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
+
+/* Block copy event */
+document.addEventListener("copy", function (e) {
+  e.preventDefault();
+  alert("🚫 Copying content is not allowed.");
+});
+
+/* Detect print attempt */
+window.onbeforeprint = function () {
+  alert("🚫 Printing is not permitted.");
+};
+</script>
+</head>
+<body>
+<!-- Branded Logo Header -->
+<div class="cls-logo-header">
+  <img id="clsLogo"
+    src="Logo chemistry learning series.png"
+    alt="Chemistry Learning Series"
+    class="cls-logo"
+    onerror="this.onerror=null; this.src='https://i.imgur.com/AQMqGix.png';">
+  <div class="cls-title">Chemistry Learning Series(C.B.C)</div>
+</div>
+
+<!-- Fake Theme Bar (Google Sites Safe) -->
+<div class="fake-theme-bar"></div>
+
+  <header>
+    <p>A focused collection of interactive teaching and learning materials, experiments,scored scripts and revision aids for UACE and U.C.E Chemistry. The Competency-Based Curriculum emphasizes application of skills, values,
+      attitudes and knowledge in real-life contexts while promoting learner-centered
+      education and national values.</p>
+
+
+  </header>
+
+
+
+
+  <main>
+    <section id="loginSection">
+      <h2>Login</h2>
+      <input type="number" id="loginId" placeholder="Member ID (1-30, Admin: 0)" />
+      <input type="password" id="loginPass" placeholder="Passcode" />
+      <button onclick="login()">Login<br> If you don't have an account Request academic access by tapping seek help</button>
+<!-- FORGOT PASSWORD SECTION -->
+<section id="forgotPasswordSection">
+  <h2>Forgot Password</h2>
+  <input type="number" id="forgotId" placeholder="Enter your Member ID" />
+  <input type="text" id="forgotSecret" placeholder="Enter your secret code/word" />
+  <button onclick="verifySecret()">Get Password<br> If you have forgotten your "secret word" also seek help. Pasword will be provide bellow</button>
+  <p id="resultDisplay" style="color: green; font-weight: bold;"></p>
+</section>
+
+<script>
+  // Password + Secret Word Storage (Replace with your actual values)
+  const userPasswords = {
+    1: { pass: "20221R1z", secret: "river" },
+    2: { pass: "20221R2y", secret: "empire" },
+    3: { pass: "20221R3x", secret: "mulch" },
+    4: { pass: "20221R4w", secret: "welcome" },
+    5: { pass: "20221R5v", secret: "stock" },
+    6: { pass: "20221R6u", secret: "circle" },
+    7: { pass: "20221R7t", secret: "mapping" },
+    8: { pass: "20221R8s", secret: "code" },
+    9: { pass: "20221R9r", secret: "cell" },
+    10: { pass: "20221R10q", secret: "angle" },
+    11: { pass: "20221R11p", secret: "king" },
+    12: { pass: "20221R12o", secret: "nation" },
+    13: { pass: "20221R13n", secret: "weather" },
+    14: { pass: "20221R14m", secret: "wave" },
+    15: { pass: "20221R15l", secret: "faith" },
+    16: { pass: "20221R16k", secret: "verb" },
+    17: { pass: "20221R17j", secret: "cash" },
+    18: { pass: "20221R18i", secret: "admin" },
+    19: { pass: "20221R19h", secret: "paint" },
+    20: { pass: "20221R20g", secret: "sequence" },
+    21: { pass: "20221R21f", secret: "manage" },
+    22: { pass: "20221R22e", secret: "mouse" },
+    23: { pass: "20221R23d", secret: "salt" },
+    24: { pass: "20221R24c", secret: "force" },
+    25: { pass: "20221R25b", secret: "organ" },
+    26: { pass: "20221R26a", secret: "chemi" },
+    27: { pass: "20221R27n", secret: "color" },
+    28: { pass: "20221R28c", secret: "cyber" },
+    29: { pass: "20221R29c", secret: "chemi" },
+    30: { pass: "2025R30d", secret: "nonmember" },
+
+    // Add all members here
+  };
+
+  function verifySecret() {
+    const id = document.getElementById("forgotId").value;
+    const secret = document.getElementById("forgotSecret").value.trim().toLowerCase();
+    const display = document.getElementById("resultDisplay");
+
+    if (userPasswords[id] && userPasswords[id].secret.toLowerCase() === secret) {
+      display.style.color = "green";
+      display.innerText = `✅ Your password is: ${userPasswords[id].pass}`;
+    } else {
+      display.style.color = "red";
+      display.innerText = "❌ Invalid Member ID or Secret Word.";
+    }
+  }
+</script>
+
+    </section>
+
+    <section id="adminSection" class="hidden">
+      <h2>Welcome Admin</h2>
+      <p>Manual portal — member records are stored in static HTML.</p>
+      <div id="adminSummary"></div>
+      <button onclick="exportToExcel()">Export to Excel</button>
+      <button onclick="logout()">Logout</button>
+    </section>
+
+
+
+    <!-- Member Sections 1 to 5 with sample data -->
+    <section id="member2" class="hidden">
+      <h2>Welcome Madam, ACHIENG YONIANA. </h2>
+         <h3>Transaction Summary</h3>
+
+<body>
+<!-- DASHBOARD -->
+<div id="dashboard" class="none">
+
+
+<div class="container">
+
+<!-- LEVEL SELECTION -->
+<div class="card">
+  <h3>U.C.E Select Class</h3>
+  <button onclick="showLevel('uce')">UCE</button>
+
+
+  <button onclick="showLevel('uace')">UACE</button>
+</div>
+
+<!-- ================= UCE ================= -->
+<div id="uce" class="hidden">
+  <div style="text-align: center; border-bottom: 2px solid #c62828; color:#040273; padding-top: 10px; margin-top: 20px;margin-bottom: 20px;"><strong>LEARNING NOTES AND INTERACTIVES LESSONS PER CLASS</strong> </div>
+  <div class="section card">
+    <button onclick="toggle('topic.1')">📘 Senior One Learning Series</button>
+    <div id="topic.1" class="section-content">
+      <p>Paste notes, simulations, or videos here.</p>
+    </div>
+  </div>
+
+  <div class="section card">
+    <button onclick="toggle('topic.2')">📘 Senior Two Learning Series</button>
+    <div id="topic.2" class="section-content">
+      <p>Paste notes, simulations, or videos here.</p>
+    </div>
+  </div>
+
+  <div class="section card">
+    <button onclick="toggle('topic.3')">📘 Senior Three Learning Series</button>
+    <div id="topic.3" class="section-content">
+      <p>Paste notes, simulations, or videos here.</p>
+    </div>
+  </div>
+
+  <div style="text-align: center; color:#040273; border-bottom: 2px solid #c62828; padding-top: 10px; margin-top: 20px;margin-bottom: 20px;"><strong>APPROACH TO THE U.C.E CHEMISTRY COMPETENCY BASED</strong> </div>
+
+
+  <div class="section card">
+    <button onclick="toggle('item1')">📝 ITEM 1: APPRECIATES THE APPLICATION OF CHEMISTRY IN DAILY LIFE</button>
+    <div id="item1" class="section-content">
+     <p style="text-align: center;border-bottom:1.5px solid #ccc;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: red; font-size: 18px;"><strong>Approach to Section A – Item 1 (Competency-Based)</strong> </p>  
+	 <p style="text-align: left;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: dark blue; font-size: 15px; color:#040273;"><strong>ITEM FORMAT</strong> </p>
+
+	  <P style="text-align: left; border-bottom: none; padding-top: 10px; margin-top: 10px;margin-bottom: 10px; magin-left:100px">    
+	  <strong>1.	Identification</strong>
+      <ul style="list-style: none; padding: 2;">
+        <li><em>•	Identify the product or process presented.</em></li>
+        <li><em>•	State one correct category or type to which it belongs.Detergents</em></li>
+      </ul>
+	  </p> 
+	  <P style="text-align: justify-content; border-bottom: none; padding-top: 10px; margin-top: 10px;margin-bottom: 10px; magin-left:100px">    
+	  <strong>2.	Function / Mode of Action</strong>
+      <ul style="list-style: none; padding: 2;">
+        <li><em>•	State the function(s) of the product or process.</em></li>
+        <li><em>•	Provide a clear and well-explained description, ensuring all key scientific terms are included.</em></li>
+      </ul>
+	  </p>	  
+	  <P style="text-align: left; border-bottom: none; padding-top: 10px; margin-top: 10px;margin-bottom: 10px; magin-left:100px">  
+	  <strong>3.	Danger, Effect, and Mitigation (DEM)</strong>
+      <ul style="list-style: none; padding: 2;">
+        <li><em>•	<strong>Danger:</strong> State one possible hazard or side effect.</em></li>
+        <li><em>•	<strong>Effect:</strong> Explain the consequence of the danger.</em></li>
+        <li><em>•	<strong>Mitigation:</strong> Suggest a practical way of reducing or preventing the danger.</em></li>
+      </ul>
+	  </p>
+
+	  <P style="text-align: left; border-bottom: none; padding-top: 10px; margin-top: 10px;margin-bottom: 10px; magin-left:100px">  
+	  <strong>4.	Evaluation (Comparison)</strong>
+      <ul style="list-style: none; padding: 2;">
+        <li><em>•	Evaluate the product or process by stating:</em></li>
+        <li><em>-<strong>One similarity</strong></em></li>
+        <li><em>-<strong>One difference</strong></em></li>
+      </ul>
+	  </p>
+	  
+	  <P style="text-align: left; border-bottom: none; padding-top: 10px; margin-top: 10px;margin-bottom: 10px; magin-left:100px">  
+	  <strong>Areas of Assessment</strong>
+      <ul style="list-style: none; padding: 2;">
+        <li>✔ Food Additives</li>
+        <li>✔ Detergents</li>
+        <li>✔ Medicines</li>
+        <li>✔ Nuclear Processes</li>
+      </ul>
+	  </p>
+     <p style="text-align: center;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 5px;color: green; font-size: 20px;"><strong>Sample Questions</strong> </p> 	  
+     <p style="text-align: center;border-bottom:none;padding-top: 0px; margin-top: 0px;margin-bottom: 5px;color: black; font-size: 11px italic;"><strong><em>(To be attempted using the above approach)</em></strong> </p> 	  
+
+    <!-- ===== TABLE OF CONTENTS ===== -->
+<div id="toc-item1" class="toc-box">
+  <p style="text-align: center; color:#040273;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px; font-size: 20px;"><strong>Contents</strong></p>
+  <ul class="toc-list">
+    <li style="border-bottom: 0.5px solid #c62828;"><a href="#item1-p1" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: purple; font-size: 19px;">1.  Food Additives</a></li>
+    <li><a href="#item1-p2" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(i)  Preservatives</a></li>
+    <li><a href="#item1-p3" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;">Response</a></li>
+    <li><a href="#item1-p4" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(ii)  Antioxidants</a></li>
+    <li><a href="#item1-p5" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item1-p6" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(iii)  Sweeteners</a></li>
+    <li><a href="#item1-p7" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item1-p8" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(iv)  Thickeners</a></li>
+    <li><a href="#item1-p9" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item1-p10" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(v)  Flavouring agents</a></li>
+    <li><a href="#item1-p11" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item1-p12" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(vi)  Colouring agents</a></li>
+    <li><a href="#item1-p13" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item1-p14" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(vii)  Emulsifiers</a></li>
+    <li><a href="#item1-p15" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item1-p16" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(viii)  Stabilizers</a></li>
+    <li><a href="#item1-p17" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item1-p19" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(ix)  Anti-caking agents</a></li>
+    <li><a href="#item1-p20" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item1-p21" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(x)  Mixed caseses-Food additives</a></li>
+    <li><a href="#item1-p22" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li style="border-bottom: 0.5px solid #c62828;"><a href="#item1-p23" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: purple; font-size: 19px;">2.  Detergents</a></li>
+    <li><a href="#item1-p24" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"> (i)  Soapy detergents</a></li>
+    <li><a href="#item1-p25" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item1-p26" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(ii)  Soapless/synthetic detergents</a></li>
+    <li><a href="#item1-p27" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item1-p28" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(iii)  Mixed categories-Detergents</a></li>
+    <li><a href="#item1-p29" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li style="border-bottom: 0.5px solid #c62828;"><a href="#item1-p30" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: purple; font-size: 19px;">3.  Medicine</a></li>
+    <li><a href="#item1-p31" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(i)  Analgesics</a></li>
+    <li><a href="#item1-p32" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item1-p33" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(ii)  Antibiotics</a></li>
+    <li><a href="#item1-p34" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item1-p35" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(iii)  Psychotherapeutics</a></li>
+    <li><a href="#item1-p36" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item1-p37" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(iv)  Mixed categories-Medicine</a></li>
+    <li><a href="#item1-p38" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li style="border-bottom: 0.5px solid #c62828;"><a href="#item1-p39" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: purple; font-size: 19px;">4.  Nuclear Processes</a></li>
+    <li><a href="#item1-p40" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(i)  Nuclear Fission</a></li>
+    <li><a href="#item1-p41" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item1-p42" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(ii)  Nuclear Fussion</a></li>
+    <li><a href="#item1-p43" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item1-p44" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(iii)  Radioactivity</a></li>
+    <li><a href="#item1-p45" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item1-p46" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(iv)  Mixed categories-Nuclear reactions</a></li>
+    <li><a href="#item1-p47" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+
+
+  </ul>
+</div>
+
+<hr class="red-line">
+
+
+	 <p id="item1-p1"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: purple; font-size: 19px;text-align: center;border-bottom: 2px solid #c62828;"><strong>Food Additives</strong> </p> 
+	 <p id="item1-p2"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(i)	Preservatives</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+Fruits like oranges, mangoes and others are used in the preparation of juice because they are an important source of vitamin C which boosts the body's immune system.
+<p>The Entrepreneurship Club of a certain secondary school produces juice which they sell to students. However, they have realized that the product sales decline in cold weather and if it stays for days, it develops an unpleasant taste and smell. They have tried to use ascorbic acid obtained indirectly from Lemon, but the problem is persistent. They have been advised to add sodium benzoate, but the club president is worried of its side effects and other members are interested in how the two products are different.<br>
+Your friend has directed the president to you as a knowledgeable person for guidance.<br>
+<strong>Task:</strong><br>
+a)	Identify the category of the alternative product.<br>
+b)	State the function of the alternative product.<br>
+c)	Explain the challenge associated with continuous use of the alternative product.<br>
+d)	Guide the club members to make an evaluation of the alternative product and the one they have been using.<br>
+ 	 </p>
+	 </p> 
+	 <p>
+	 <p id="item1-p3"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;">
+<strong>(a)	Category</strong></p><br>Synthetic/artificial food additive which is a preservative 
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"><strong>(b)	Function</strong><br>
+Extend/increase the shelf life of food by inhibiting the growth of moulds, bacteria and other microorganism in food thus preventing it from going bad/getting spoilt. 
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> <strong>(c)	Challenge associated with continuous use of the alternative product</strong><br>
+I.	Causes nervous disorders resulting to insomnia, hyperactivity and irritability.<br>
+<strong>Mitigation</strong><br>
+a.	Use recommended amounts of the food additive.<br>
+II.	Causes digestive disorders which result to diarrhoea and stomach pains.<br> 
+<strong>Mitigation</strong><br>
+b.	Use only the food additives one is familiar to.<br>
+III.	Causes respiratory problems which results to sinusitis and asthma.<br>
+<strong>Mitigation</strong><br>
+c.	UNBS should approve the food additive before its used thus protecting the public against health hazards.<br>
+IV.	Causes to skin irritations thus leading to itching's, rashes and swelling.<br>
+Mitigations
+d.	Limited use for the food additive.<br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"><strong>(d)	Evaluation of the alternative product</strong><br>
+<strong>Similarity</strong><br>
+Both ascorbic obtained from lemon and sodium benzoate extend/increase the shelf life of food. / preserve food.<br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"><strong>Difference</strong><br>
+Ascorbic obtained from lemon has less side effects on humans compared to sodium benzoate.<br>
+Ascorbic obtained from lemon is required in large amounts to preserve food while sodium benzoate is required in small amounts.<br>
+Ascorbic obtained from lemon has a slow acting while sodium benzoate has a quick / fast response action in preserving food.</p></p></p>
+	 </p>
+
+
+
+
+	 <p id="item1-p4"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(ii)	Antioxidants</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+<p>Vegetable oils such as sunflower and groundnut oil are commonly used for frying foods. The Food and Nutrition Club of a certain secondary school prepares fried snacks for sale to students. After repeated exposure to air and heat, the oil develops an unpleasant smell and taste, even though no microbial growth is involved. The club decided to use extract from ginger and rosemary but the change was so slow. 
+<p>The club has been advised to add butylated hydroxytoluene (BHT), to the oil to improve its quality, but some members do not understand why this substance is necessary or how it works. 
+ </P><br>
+<div class="img-wrap">
+  <img
+    src="Fig 1. Some ingredients used to manage fried snacks for sale.jpg"
+    class="chem-img"
+    alt="Fig 1. Some ingredients used to manage fried snacks for sale"
+    onerror="this.onerror=null; this.src='https://i.imgur.com/iYb2hM8.jpeg';"
+  >
+
+  <span class="img-caption">
+    Fig 1. Some ingredients used to manage fried snacks for sale
+  </span>
+</div>
+
+<br>
+
+You have been consulted as a knowledgeable learner to guide the club.<br>
+<strong>Task:</strong><br>
+a)	Identify the category of the advised ingredient.<br>
+b)	State the function of the advised ingredient.<br>
+c)	Explain the challenge associated with continuous use of the alternative product.<br>
+d)	Guide the club members on how to evaluate the advised additive against the that they have been using.<br>
+   
+    </p>
+    </p>
+    	
+	 <p id="item1-p5"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>a.	Category</strong><br>
+The advised ingredient (BHT) is a <strong>synthetic/artificial</strong> food additive which is an <strong>antioxidant</strong>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 0px;color: black; font-size: 18px;"><strong>b.	Function</strong><br>
+Prevents or delays oxidation of oils by reacting with free radicals/oxygen, hence preventing development of rancid smell and taste and maintaining oil quality.
+
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"><strong>
+c.	Challenges associated with excessive use of the advised ingredient and mitigations</strong><br>
+I.	Health complications such as headaches, dizziness and possible damage to body organs when consumed in excess.<br>
+<strong>Mitigation</strong><br>
+•	Use only recommended quantities as guided by food safety authorities.<br>
+II.	Increased risk of allergic reactions such as skin irritation and breathing difficulties in sensitive individuals.<br>
+<strong>Mitigation</strong><br>
+•	Properly labelling food products and allergic customers should use only food additives they are familiar to<br>
+III.	Potential toxic effects due to accumulation of synthetic antioxidants in the body hence death.<br>
+<strong>Mitigation</strong><br>
+•	Strict regulation and approval of antioxidants by UNBS before use.<br>
+V   Alteration of food quality such as undesirable taste or smell at high concentrations<br>
+<strong>Mitigation</strong><br>
+•	Controlled and limited use of synthetic antioxidants during food processing.<br> 
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"><strong>d.	Evaluation of ingredients.</strong><br>
+<strong>Similarity</strong><br>
+Both extract obtained from ginger or rosemary and butylated hydroxytoluene prevents/delays oxidation of oils.<br>
+<strong>Difference</strong><br>
+Extract obtained from ginger or rosemary has less side effects on humans compared to butylated hydroxytoluene (BHT).<br>
+Extract obtained from ginger or rosemary is required in large amounts to prevent oxidation of fatty food while butylated hydroxytoluene (BHT) is required in small amounts.<br>
+Extract obtained from ginger or rosemary take a very short time while butylated hydroxytoluene (BHT) take a longer time to prevent oxidation.
+</p></p></p></p>
+
+
+	 <p id="item1-p6"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(iii)	Sweeteners</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+A community health centre runs a nutrition program for diabetic and non-diabetic patients. During health talks, they prepare herbal tea for participants. Initially, they sweetened the tea using honey and table sugar (sucrose), but some patients complained of sharp rises in blood sugar levels. 
+<p>Health workers were advised to use saccharin instead, but some participants are worried about its safety, while others want to understand how these substances differ.<br></p>
+<div class="img-wrap">
+  <img
+    src="Fig 2. Some common ingrdients herbal tea.jpg"
+    class="chem-img"
+    alt="Fig 2. Some common ingrdients herbal tea"
+    onerror="this.onerror=null; this.src='https://i.imgur.com/mcLXBiW.jpeg';"
+  >
+
+  <span class="img-caption">
+    Fig 2. Some common ingrdients herbal tea
+  </span>
+</div> 
+<br>
+
+You have been asked to guide the participants during the next health session.<br>
+<strong>Task:</strong><br>
+a)	Identify the types of ingredients used in the tea.<br>
+b)	State the function of the alternative ingredient.<br>
+c)	Suggest the challenges associated with excessive use of alternative ingredient.<br>
+d)	Advise the health centre to make an evaluation of the alternative product and the one they have been using.<br>
+</p>
+
+	 <p id="item1-p7"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>a.	Category</strong><br>
+The ingredients used in the herbal tea are <strong>food additives</strong>, which include <strong>natural</strong> (honey and sucrose) and <strong>a synthetic sweeteners</strong>  (saccharin).
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>b.	Function</strong><br>
+Sweeteners are added to food and drinks to improve taste by providing sweetness.
+Saccharin specifically provides sweetness without increasing blood glucose levels, making it suitable for diabetic patients.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>c.	Challenges associated with excessive use of the alternative ingredient</strong><br>
+I.	Possible health concerns such as headaches or stomach discomfort in some individuals when saccharin is overused since it contains chemicals.<br>
+<strong>Mitigation:</strong><br>
+•	<em>Use saccharin only in recommended quantities as guided by health authorities.</em><br>
+II.	Unpleasant aftertaste which may reduce acceptability of the tea.<br>
+<strong>Mitigation:</strong><br>
+•	<em>Use very small amounts or blend with natural sweeteners where appropriate.</em><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>d. Evaluation of the ingredients</strong><br>
+<strong>(i) Similarity</strong><br>
+<em>•	Both natural and synthetic sweeteners are used to sweeten food and beverages.</em><br>
+<strong>(ii) Difference</strong><br>
+However;<br>
+<em>•	Saccharin has more side effects on humans compared to Natural sweeteners (honey, sucrose)</em>.<br>
+<em>•	Saccharin is required in very small amounts and more effective compared to natural sweeteners.</em><br>
+<strong>Advice:</strong><br>
+<em>• Therefore, I advise the health centre to use saccharin in controlled amounts for diabetic patients, while natural sweeteners may be used moderately for non-diabetic participants.</em>
+</p></p></p></p>
+
+	 <p id="item1-p8"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(iv)	Thickeners</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+A women’s group in a rural community prepares fruit porridge and soup for sale at the local market. To improve thickness and texture, they sometimes use cassava starch. However, during storage, the porridge becomes watery and loses its appealing texture. 
+<p>They have been advised to use carboxymethyl cellulose (CMC) instead, but some members are concerned about its safety and want to understand how it compares with starch.
+You have been asked to guide the group during a training session.<br>
+<strong>Task:</strong><br>
+a)	State the category of the ingredients and the function of each ingredient. <br>
+b)	Describe the side effect(s) associated with the ingredients.<br>
+c)	State the;<br>
+I.	similarities of the ingredients.<br>
+II.	differences between the other ingredients and CMC.<br>
+</p></p>
+
+	 <p id="item1-p9"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>a.	Category</strong><br>
+The ingredients used are <strong>food additives (thickeners),</strong> which include a natural thickener (starch) and a <strong>synthetic thickener</strong> (carboxymethyl cellulose, CMC).
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>b.	Function</strong><br>
+Thickeners improve the thickness, texture, and consistency of foods such as porridge and soup, making them more appealing and stable during storage.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>b. Challenges associated with excessive use of the ingredients and mitigations</strong><br>
+I.	Digestive discomfort such as bloating or stomach upset when CMC or starch is used in excess.<br>
+<strong>Mitigation:</strong><br>
+<em>•	Use thickeners only in recommended amounts.</em><br>
+II.	Possible allergic reactions in sensitive individuals, especially with synthetic thickeners.<br>
+<strong>Mitigation:</strong><br>
+<em>•	Properly label food products and advise sensitive consumers to avoid unfamiliar additives.</em>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>c. Evaluation of the ingredients</strong><br>
+<strong>(i) Similarity</strong><br>
+<em>•	Both starch and CMC are food additives used to increase thickness and improve texture of food.</em><br>
+<strong>(ii) Difference </strong><br>
+However<br>
+<em>•	CMC is effective in small quantities, while starch is required in larger amounts.<br>
+•	Synthetic food addive is more effects than natural food additive.</em><br>
+Advice:</br>
+<em>•	Therefore, I advise the group to use CMC in small, controlled amounts where longer shelf life and consistent texture are required.</em>
+</p></p></p></p>
+
+	 <p id="item1-p10"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(v)	Flavouring agents</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+When preparing chicken sauce for her family, Jane adds common salt only. However, when she visited a restaurant, Jane noted that the chicken sauce served to her contained onions, tomatoes and curry powder in addition to common salt. Figure 1 shows some of the ingredients used in the preparation of chicken sauce in the restaurant. 
+<p>Jane was highly impressed by the restaurant sauce, which tasted much better than the one she prepares at home. She wants to know more about the ingredients used in the restaurant and has approached you for help.</p>
+<div class="img-wrap">
+  <img
+    src="Fig 3. Some of the ingredients used in the restaurant.jpg"
+    class="chem-img"
+    alt="Fig 3. Some of the ingredients used in the restaurant"
+    onerror="this.onerror=null; this.src='https://i.imgur.com/TvLP3W7.jpeg';"
+  >
+
+  <span class="img-caption">
+    Fig 3. Some of the ingredients used in the restaurant
+  </span>
+</div> 
+<br>
+<strong>Task:</strong><br>
+a)	State the category of the ingredients and the function of each ingredient. <br>
+b)	Describe the side effect(s) associated with the ingredients.<br>
+c)	State the; <br>
+I.	similarities of the ingredients. <br>
+II.	differences between the other ingredients <br>
+</p>
+
+	 <p id="item1-p11"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>a.	Category</strong><br>
+The ingredients to used are <strong>food additives</strong> which are both <strong>natural</strong> and <strong>synthetic</strong> food flavourings.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>b.	Function</strong><br>
+Food additives such as flavour enhancers improve on the taste and aroma of food.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong> b.	Challenges associated with excessive use of the ingredient and mitigations</strong><br>
+I.	Food additive cause allergic reactions such as itching, to some people. This is because they contain chemicals which may not be compatible with one's body immune system, <br>
+<strong>Mitigated by;</strong><br> 
+<em>•	Discontinuing the use of that particular food additive.</em><br>
+II.	Health complications such as headaches, dizziness and possible damage to body organs when consumed in excess.<br>
+<strong>Mitigated by;</strong><br> 
+<em>•	Use only recommended quantities as guided by food safety authorities.</em><br>
+III.	Increased risk of allergic reactions such as skin irritation and breathing difficulties in sensitive individuals.<br>
+<strong>Mitigated by;</strong><br> 
+<em>•	Properly labelling food products and allergic customers should use only food additives they are familiar to</em>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>c.	Evaluation of the ingredients</strong><br>
+<strong>(i) Similarity</strong><br>
+<em>•	Both natural and synthetic food additives improve on the quality of food.</em> <br>
+<strong>(ii) Difference</strong><br>
+However;<br>
+<em>•	Natural food additives have fewer side effects than the synthetic ones</em><br>
+<em>•	Natural food additive is required in large amounts while synthetic food additive is required in small amounts.</em><br>
+<em>•	Synthetic food addive is more effects than natural food additive.</em><br>
+Advice:<br>
+<em>•	Therefore, I advise the company to use natural food additives.</em>
+</p></p></p></p>
+
+	 <p id="item1-p12"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(vi)	Colouring agents</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+A school catering department prepares drinks and snacks for students during sports days. To make the foods more attractive, they use turmeric and beetroot extract. However, the appearance fade after some time, especially when the foods are exposed to sunlight. They have been advised to use tartrazine instead, but some teachers and students are worried about its safety and want to know how it differs from other ingredients.
+   </p>
+<div class="img-wrap">
+  <img
+    src="Fig 4. Some ingridients used for making drinks and snacks.jpg"
+    class="chem-img"
+    alt="Fig 4. Some ingridients used for making drinks and snacks"
+    onerror="this.onerror=null; this.src='https://i.imgur.com/UaQZjgJ.jpeg';"
+  >
+
+  <span class="img-caption">
+    Fig 4. Some ingridients used for making drinks and snacks
+  </span>
+</div> 
+<br>
+You have been asked to guide the school community during a meeting.<br>
+<strong>Task:</strong><br>
+a)	State the category of the ingredients and the function of each ingredient.<br>
+b)	Describe the side effect(s) associated with the ingredients.<br>
+c)	State the;<br>
+I.	similarities of the ingredients.<br>
+II.	differences between the other ingredients and tartrazine.<br>
+
+
+	 <p id="item1-p13"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>a.	Category</strong><br>
+The ingredients used are food additives specifically colouring agents, which include natural colouring agents (turmeric and beetroot extract) and a synthetic colouring agent (tartrazine).
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>Function</strong><br>
+Colouring agents are added to foods and drinks to improve or restore colour, making them more attractive and appealing to consumers.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>b.	Side effects associated with excessive use of the ingredients and mitigations</strong><br>
+I.	Allergic reactions such as skin rashes, itching and breathing difficulties, especially from synthetic colouring agents like tartrazine in sensitive individuals since they contain chemicals.<br>
+<strong>Mitigation:</strong><br>
+<em>•	Avoid use by allergic individuals and clearly label food products.</em><br>
+II.	Hyperactivity and headaches in some children due to excessive intake of synthetic colours since they contain chemicals.<br>
+Mitigation:
+<em>•	Use only approved and recommended quantities.</em><br>
+III.	Digestive discomfort such as nausea when large amounts of natural colouring agents are consumed.<br>
+<strong>Mitigation:</strong><br>
+<em>•	Use colouring agents in moderate amounts.</em><br>
+
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>c.	Evaluation of the ingredients</strong><br>
+<strong>(i)	Similarities</strong><br>
+<em>• Both natural and synthetic colouring agents are food additives used to improve the appearance of food.</em><br>
+<em>• All are used in small quantities.</em><br>
+<strong>(ii)	Differences between the other ingredients and tartrazine</strong><br>
+However;<br>
+<em>•	Natural colouring agents are obtained from plant materials such as turmeric and beetroot, while synthetic colouring agents like tartrazine are manufactured chemically.</em><br>
+<em>•	Natural colouring agents generally have fewer health risks, whereas synthetic colouring agents have more side effects.</em><br>
+<em>•	Natural colouring agents are required in larger amounts to achieve the desired colour, while synthetic colouring agents are more effective in very small quantities.</em><br>
+<em>•	Synthetic colouring agents are more stable and long-lasting, whereas natural colouring agents may fade when exposed to light or heat.</em><br>
+Advice:<br>
+<em>•	Therefore, I advise the school catering department to use synthetic food colouring agents such as tartrazine in very small recommended amounts whenever possible because they are more effective, more stable even on sunlight and lasts long.</em><br>
+</p></p></p></p>
+
+	 <p id="item1-p14"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(vii)	Emulsifiers</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+A small-scale food processing company produces bottled salad dressings and cooking sauces for sale in local markets. The producers use egg yolk to help mix “oil and water” in the dressing, but after some time, the mixture separates during storage. They have been advised to use polysorbates instead to improve food quality, but some workers are concerned about the safety of this alternative ingredient and want to understand how it differs from the other. Figure some of the ingredients used.
+    </p>
+<div class="img-wrap">
+  <img
+    src="Fig 5. Common ingredient for making salad dressings and sauces.jpg"
+    class="chem-img"
+    alt="Fig 5. Common ingredient for making salad dressings and sauces"
+    onerror="this.onerror=null; this.src='https://i.imgur.com/hCcSQqS.jpeg';">
+
+  <span class="img-caption">
+    Fig 5. Common ingredient for making salad dressings and sauces
+  </span>
+</div> 
+
+<br>
+You have been invited to guide the workers during a sensitization workshop.<br>
+<strong>Task:</strong><br>
+a)	State the category of the ingredients and the function of each ingredient.<br>
+b)	Describe the side effect(s) associated with the ingredients.<br>
+c)	State the;<br>
+i.	similarities of the ingredients.<br>
+ii.	differences between natural and synthetic emulsifiers.<br>
+
+
+	 <p id="item1-p15"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>a.	Category</strong><br>
+The ingredients used are food additives known as emulsifiers, which include natural emulsifiers (lecithin from egg yolk or soy) and synthetic emulsifiers (polysorbates).
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>Function</strong><br>
+Emulsifiers help oil and water to mix and remain uniformly dispersed, improving texture, appearance, and stability of foods such as sauces and salad dressings.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>b.	Challenges associated with excessive use of the ingredients and mitigations</strong><br>
+I.	Allergic reactions, especially to lecithin from egg yolk or soy, in sensitive individuals.<br>
+<strong>Mitigation:</strong><br>
+<em>•	Clearly label products and avoid use among people with known egg or soy allergies.</em>
+II.	Digestive discomfort such as bloating or diarrhea when synthetic emulsifiers are consumed in excess.<br>
+<strong>Mitigation:</strong><br>
+<em>•	Use emulsifiers only in approved by UNBS and recommended quantities.</em>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>c.	Evaluation of the ingredients</strong><br>
+<strong>(i)	Similarity</strong><br>
+<em>•	Both natural and synthetic emulsifiers perform the same role of stabilizing mixtures of oil and water.</em><br>
+<strong>(ii)	Difference</strong><br>
+However;<br>
+<em>•	Natural emulsifiers are often required in larger amounts, while synthetic emulsifiers are effective in small quantities.<br>
+•	Synthetic emulsifiers provide longer shelf stability compared to natural emulsifiers.</em><br>
+<strong>Advice:</strong><br>
+<em>•	Therefore, I advise the company to prioritize natural emulsifiers such as lecithin, and only use synthetic emulsifiers like polysorbates when necessary and within recommended limits.
+</em></p></p></p></p>
+
+	 <p id="item1-p16"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(viii)	Stabilizers</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+A dairy processing group produces flavoured yoghurt for sale in a trading centre. They notice that after a few days of storage, the yoghurt separates and develops a watery layer. They have been using natural gelatin (extracted from animal bones and fish skins), but they are advised to use polyvinyl compounds to improve product stability. Some members are concerned about health effects and want to understand the difference between natural and polyvinyl stabilizers.
+<br><strong>Task:</strong><br>
+a)	State the category of the ingredients and the function of each ingredient.<br>
+b)	Describe the side effect(s) associated with the ingredients.<br>
+c)	State the;<br>
+i.	similarities of the ingredients.<br>
+ii.	differences between natural and polyvinyl stabilizers.<br></p>
+
+	 <p id="item1-p17"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>a.	Category</strong><br>
+The ingredients used are <strong>food additives</strong>, which include <strong>natural</strong>  stabilizers (gelatin extracted from animal bones and fish skins) and <strong>synthetic stabilizers</strong> (polyvinyl compounds).
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>Function</strong><br>
+Stabilizers help to maintain the consistency and texture of food products by preventing separation of ingredients such as water and solids in yoghurt and other processed foods.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>b.	Challenges associated with excessive use of the ingredient and mitigations</strong><br>
+I.	Allergic reactions such as skin irritation or digestive discomfort may occur in sensitive individuals when consuming gelatin or synthetic stabilizers.<br>
+<strong>Mitigation:</strong><br>
+<em>•	Discontinue or reduce use of the particular stabilizer if reactions occur.</em><br>
+II.	Health complications such as possible digestive upset or long-term accumulation effects from synthetic polyvinyl stabilizers when overused.<br>
+<strong>Mitigation:</strong><br>
+<em>•	Use only recommended amounts as guided by food safety authorities.</em><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>c.	Evaluation of the ingredients</strong><br>
+<strong>(i)	Similarity</strong><br>
+<em>•	Both natural (gelatin) and synthetic (polyvinyl compounds) stabilizers help to maintain product consistency and prevent ingredient separation.</em><br>
+<strong>(ii)	Difference</strong><br>
+<em>•	Natural food stabilizers have less health side effects than synthetic food stabilizers.<br>
+•	Natural stabilizers are usually required in larger quantities, while synthetic stabilizers are effective in smaller amounts.</em><br>
+<strong>Advice:</strong><br>
+<em>•	Therefore, I advise the company to prefer natural stabilizers like gelatin where possible, and to use polyvinyl compounds only in controlled, minimal amounts to improve stability without compromising safety.</em>
+</p></p></p></p>
+
+
+	 <p id="item1-p19"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(ix)	Anti-caking agents</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+A small spice processing company packages powdered spices such as chili, garlic, and curry powder for sale in local markets. During storage, the powders tend to clump together, making them difficult to use. The company has been using natural rice flour to reduce clumping, but they are advised to use silicon dioxide to improve flow. Staff and customers are concerned about safety and want to understand the difference between natural and silicon dioxide anti-caking agents.
+<br><strong>Task:</strong><br>
+a)	State the category of the ingredients and the function of each ingredient.<br>
+b)	Describe the side effect(s) associated with the ingredients.<br>
+c)	State the;<br>
+i.	similarities of the ingredients.<br>
+ii.	differences between the ingredients.<br></p>
+
+	 <p id="item1-p20"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>a.	Category</strong><br>
+The ingredients used are <strong>food additives</strong>, which are both <strong>natural</strong> and <strong>synthetic anti-caking agents.</strong>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>Function</strong><br>
+Anti-caking agents are added to powdered foods to prevent clumping, improve free flow, and maintain good texture and appearance during storage.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>b.	Challenges associated with excessive use of the ingredient and mitigations</strong><br>
+I.	Digestive discomfort such as bloating or irritation when silicon dioxide is consumed in excess <em> mostly in sensitive individuals.</em><br>
+<strong>Mitigation:</strong><br>
+<em>•	Use only approved and recommended quantities.</em><br>
+II.	Possible allergic reactions in sensitive individuals, especially to synthetic anti-caking agents.<br>
+<strong>Mitigation:</strong><br>
+<em>•	Proper labelling of food products and advising sensitive consumers accordingly.</em><br>
+III.	Reduction in food quality if too much rice flour is added, affecting taste and texture.<br>
+<strong>Mitigation:</strong><br>
+<em>• Use controlled amounts suitable for the type of food being processed.</em><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>c.	Evaluation of the ingredients</strong><br>
+<strong>(i)	Similarity</strong><br>
+<em>•	Both rice flour and silicon dioxide are used to prevent caking and improve flow of powdered foods.</em><br>
+<strong>(ii)	Difference</strong><br>
+However;<br>
+<em>•	Rice flour is required in larger quantities, whereas silicon dioxide is effective in very small amounts.</em><br>
+<strong>Advice:</strong><br>
+<em>•	Therefore, I advise the company to prefer natural anti-caking agents like rice flour where possible, and use silicon dioxide sparingly and within safety limits when higher efficiency is required.</em>
+</p></p></p></p>
+
+	 <p id="item1-p21"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(x)	Mixed cases</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+Mr. Kato runs a small catering business in a busy trading centre in Mbale City. Recently, many customers have stopped buying his food due to poor taste, unpleasant smell, and quick spoilage. In addition, the food looks dull in appearance and the soups served are too watery. Mr. Kato plans to improve the quality of his meals by adding suitable substances during food preparation to make them more attractive and longer-lasting. Knowing that you are a chemistry student, he has asked you to advise him on the appropriate products to purchase.
+<br><strong>Task:</strong><br>
+Write a piece of advice to him on.<br>
+a)	the category of the ingredients <br>
+b)	the function of each ingredient.<br>
+c)	Describe the side effect(s) associated with the ingredients.<br>
+d)	State the;<br>
+iii.	similarities of the ingredients.<br>
+iv.	differences between the ingredients.<br>
+</p>
+
+	 <p id="item1-p22"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>a.	Category</strong><br>
+The substances Mr. Kato should use are <strong>food additives.</strong> These are classified into <strong>Natural</strong> and <strong>Artificial (synthetic)</strong> food additives such as <strong>preservatives, flavour enhancers, food colourings, stabilizers, antioxidants and thickeners.</strong>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>b)	Uses of different products/substances</strong><br></p>
+<strong>•	Preservatives,</strong> slow down or prevent the growth of microorganisms, thereby extending the storage life of food.<br>
+<strong>•	Flavouring agents</strong> improve the taste and smell of food, making it more appealing to customers.<br>
+<strong>•	Stabilizers stabilize</strong> emulsions by preventing reactions between food components, thus improving consistency.<br>
+<strong>•	Food colourings</strong> restore or improve the colour of food to enhance its visual appeal.<br>
+<strong>•	Antioxidants</strong> prevent oxidation of fats and oils, stopping rancidity when food is stored for long reducing spoilage.<br>
+<strong>•	Thickeners</strong> increase viscosity, giving food a dense, smooth and uniform texture without greatly changing other properties.<br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>c)	Side effects of using different products on customers</strong><br></p>
+•	Preservatives may cause asthma, allergies, carcinogenic effects and increase the risk of cardiovascular diseases.<br>
+•	Some antioxidants may be carcinogenic when used excessively.<br>
+•	Salt increases blood pressure.<br>
+•	Flavouring agents may cause headaches, allergies, thirst, chest pain and increase the risk of leukemia.<br>
+•	Food colourings may cause allergies, hyperactivity and carcinogenic effects.<br>
+•	Thickeners may cause allergic reactions in sensitive individuals.<br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>d)	Evaluation of the products</strong><br>
+<strong>I.	Similaritie</strong><br>
+<em>•	Both natural and synthetic additives make food more delicious.<br>
+•	Both help in preserving food.<br>
+•	Both restore or enhance food colour. Etc.</em><br>
+<strong>III.	Differences</strong><br>
+However;<br>
+<em>•	Natural additives are chemical compounds extracted from plants, animals or minerals, while synthetic additives are produced through chemical or enzymatic reactions.<br>
+•	Natural food additives are less effective than synthetic ones.<br>
+• Natural additives have fewer side effects compared to synthetic additives.</em><br>
+Advice:<br>
+<em>• Mr kato sholud  should use natural food additives where possible and apply synthetic additives in recommended amounts to improve food quality while protecting customers’ health.</em>
+</p>
+
+
+
+
+
+
+	 <p id="item1-p23"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: purple; font-size: 19px;text-align: center;border-bottom: 2px solid #c62828;"><strong>Detergents</strong> </p> 
+	 <p id="item1-p24"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(i)	Soapy detergents</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+Amina lives in a rural community where most households use hard water from a protected well. One day, while washing clothes, she accidentally dirtied her white blouse with mud. She decided to clean it using an ordinary soap. After washing and rinsing several times, brown stains remained on the blouse.
+<br><strong>Task:</strong><br>
+As a chemistry learner;<br>
+a)	Identify the mistake Amina made when choosing the cleaning product.<br>
+b)	Explain how the cleaning product works.<br>
+c)	Advise Amina on the challenges associated with long-term use of the product.<br>
+(d)	Evaluate the product used.<br>
+</p>
+
+	 <p id="item1-p25"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>a) Mistake made when choosing the cleaning product</strong><br>
+Amina made the mistake of using soap (a soapy detergent) instead of a soapless detergent while washing with hard water from a well.</p> <br>
+<div class="note-card">
+  <p style="list-style: none; padding: 0;font-style:italic;color:red;"><strong>Point to note:</strong></p><p> Hard water contains calcium and magnesium ions which react with soap to form an insoluble scum. This scum reduces the cleaning action of soap and causes brown stains to remain on clothes even after thorough rinsing.</p>
+</div><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(b) How the cleaning product works</strong><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 6px;margin-bottom: 6px;color: black; font-size: 18px;"> 
+Dirt on clothes is usually held by a thin layer of grease or oil. Cleaning agents such as soaps and detergents remove dirt through a process called emulsification.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 6px;margin-bottom: 6px;color: black; font-size: 18px;"> 
+A soap molecule consists of two distinct parts:<br>
+<em><strong>•	A hydrophilic (polar) head</strong>, which is soluble in water.</em><br>
+<em><strong>•	A hydrophobic (non-polar) tail</strong>, which is soluble in grease and oil.</em><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 6px;margin-bottom: 6px;color: black; font-size: 18px;"> 
+During washing, soap reduces the surface tension between water and grease. The hydrophobic tail embeds itself into the oily dirt on the cloth, while the hydrophilic head remains in the water.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 6px;margin-bottom: 6px;color: black; font-size: 18px;"> 
+When the cloth is agitated, the grease is broken into tiny droplets surrounded by soap molecules.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 6px;margin-bottom: 6px;color: black; font-size: 18px;"> 
+These droplets are dispersed in water as an emulsion and are removed during rinsing, leaving the cloth clean.<br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(c) Challenges associated with long-term use of the product</strong><br>
+
+I.	Prolonged use of soap may lead to skin irritation, burns or blisters, due to the alkaline nature of soaps and detergents.<br>
+<strong>Mitigation measures</strong><br>
+<em>•	Wash hands and skin thoroughly with clean water after washing clothes.</em><br>
+<em>•	Use protective gloves when washing frequently.</em><br>
+II.	Prolonged use of soap may also lead to eye irritation, redness and pain if the detergent comes into contact with the eyes, which may result in temporary or permanent eye damage (loss of vision).<br>
+<strong>Mitigation measures</strong><br>
+<em>•	In case of eye contact, rinse immediately with plenty of clean water and seek medical attention if necessary.</em><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(d)	Evaluation of the products</strong><br>
+
+<strong>(i)	Similarities between soapy and soapless detergents</strong><br>
+<em>•	Both are salts of long-chain organic acids.<br>
+•	Both remove dirt by emulsification.<br>
+•	Both are effective cleansing agents in soft water.</em><br>
+<strong>(ii)	Differences between soapy detergents and soapless detergents</strong><br>
+<em>•	Soapy detergents react with hard water to form scum while soapless do not form scum in hard or soft water.<br>
+•	Soapy detergents are gentle on the skin whereas soapless may be harsh to the skin on prolonged use.<br>
+•	 Soapy detergents are sodium or potassium salts of long-chain carboxylic acids while soapless are sodium salts of long-chain benzene sulphonic acids.<br>
+•	Soapy detergents cannot be used in strongly acidic solutions whereas soapless can be used in acidic solutions.<br>
+•	Soapy detergents are biodegradable and environmentally friendly while soapless are mostly non-biodegradable and may cause environmental pollution.</em><br>
+<strong>Conclusion / Advice</strong><br>
+<em>Therefore, Amina is advised to use soapless detergents when washing with hard water, as they clean effectively without forming scum and leaving stains on clothes.
+</em><br>
+</p></p></p></p></p></p></p></p>
+
+	 <p id="item1-p26"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(ii)	Soapless/synthetic detergents</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+Bashir lives in a town where most households use hard water from underground sources. While repairing his bicycle, grease stained his white shirt. He first washed the shirt using an ordinary cleaning bar, but after several rinses, grey stains remained on the cloth. He later used another washing product, and the shirt became clean after one rinse without leaving any marks.
+<br><strong>Task:</strong><br>
+As a chemistry learner;<br>
+a)	Identify the mistake Bashir made when he first chose a washing product.<br>
+b)	Explain how the more effective washing product removes dirt from the cloth.<br>
+c)	State the challenges associated with long-term use of the more effective product.<br>
+d)	Evaluate the two washing products used.<br></p>
+
+	 <p id="item1-p27"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(a) Mistake made when choosing the cleaning product</strong><br>
+Bashir made the mistake of first using <strong>soap (a soapy detergent)</strong> instead of <strong>a soapless detergent</strong> while washing with hard water from underground sources. 
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(b) How the more effective cleaning product works</strong><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 6px;margin-bottom: 6px;color: black; font-size: 18px;"> 
+Dirt on clothes is usually held by a thin layer of grease or oil. Soapless detergents remove dirt mainly by emulsification.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 6px;margin-bottom: 6px;color: black; font-size: 18px;"> 
+A detergent molecule consists of two main parts:<br>
+<em><strong>•	A hydrophilic (polar) head</strong>, which is soluble in water.</em><br>
+<em><strong>•	A hydrophobic (non-polar) tail</strong>, which is soluble in grease and oil.</em><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 6px;margin-bottom: 6px;color: black; font-size: 18px;"> 
+During washing, the detergent reduces the surface tension between water and grease. The hydrophobic tail embeds itself into the oily dirt on the cloth, while the hydrophilic head remains in the water.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 6px;margin-bottom: 6px;color: black; font-size: 18px;"> 
+When the cloth is agitated, the grease is broken into tiny droplets surrounded by detergent molecules.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 6px;margin-bottom: 6px;color: black; font-size: 18px;"> 
+These droplets are dispersed in water as an emulsion and are removed during rinsing, leaving the cloth clean.<br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(c) Challenges associated with long-term use of the product</strong><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: red; font-size: 18px;"> 
+<strong>TO THE USER:</strong></p><br>
+I.	Skin irritation, burns or blisters may occur due to prolonged contact with detergent chemicals.<br>
+<strong>Mitigation measures:</strong><br>
+<em>•	Wash hands and skin thoroughly with clean water after washing clothes.<br>
+•	Use protective gloves when washing frequently.</em><br>
+II.	Eye irritation, redness and pain may occur if the detergent comes into contact with the eyes, which may lead to temporary or permanent eye damage.
+<strong>Mitigation measures:</strong><br>
+<em>•	Rinse the eyes immediately with plenty of clean water.<br>
+•	Seek medical attention if irritation persists.</em><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: red; font-size: 18px;"> 
+<strong>TO THE ENVIRONMENT:</strong></p><br>
+I.	Soapless detergents contain phosphates which promote excessive growth of algae (algal bloom) in water bodies reducing dissolved oxygen hence death of aquatic organisms.<br>
+<strong>Mitigation measures:</strong><br>
+<em>•	Proper disposal and treatment of detergent effluents.</em><br>
+II.	Poor disposal of detergent water containing phosphates and other chemicals in soil, alters soil pH, reduces soil fertility and interferes with soil microorganisms. This results to poor growth, yellowing of leaves, or reduced crop yields.<br>
+<strong>Mitigation measures:</strong><br>
+<em>•	Proper treatment and disposal of detergent effluents.</em>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(d) Evaluation of the products</strong><br>
+<strong>(i) Similarities between soapy and soapless detergents</strong><br>
+<em>•	Both are effective cleansing agents in soft water.<br>
+•	Both are salts of long-chain organic acids.<br>
+•	Both remove dirt by emulsification.</em><br>
+<strong>(ii) Differences between soapy detergents and soapless detergents</strong><br>
+<em>•	Soapy detergents react with hard water to form scum, whereas soapless detergents do not form scum in either hard or soft water.<br>
+•	Soapy detergents are gentle on the skin, while soapless detergents may be harsh on prolonged use.<br>
+•	Soapy detergents are sodium or potassium salts of long-chain carboxylic acids, while soapless detergents are sodium salts of long-chain benzene sulphonic acids.<br>
+•	Soapy detergents cannot be used in strongly acidic solutions, whereas soapless detergents can be used in acidic solutions.<br>
+•	Soapy detergents are biodegradable, while soapless detergents are mostly non-biodegradable and may cause environmental pollution.</em><br>
+<strong>Conclusion / Advice</strong><br>
+<em>Therefore, Bashir is advised to use soapless detergents when washing with hard water, since they clean effectively without forming scum and leaving stains on clothes.</em>
+</p></p></p></p></p></p></p></p></p>
+
+	 <p id="item1-p28"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(iii)	Mixed categories</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+Residents of a workers’ housing estate noticed that school uniforms worn by their children quickly developed brown stains after washing. Most households in the area use hard tap water. Some parents reported that even after repeated washing, the stains remained, while others claimed better results after changing the cleaning product. 
+<p>Confusion has arisen over which washing products are most effective and suitable for long-term use.<br>
+You have been asked, as a chemistry student, to guide the parents.<br>
+<strong>Task:</strong><br>
+As a chemistry student, guide the parents on;<br>
+(a)	identifying the types of washing products being used.<br>
+(b)	explaining how the products works during washing.<br>
+(c)	the challenges associated with long-term use of the products.<br>
+(d)	evaluating the washing products used.<br></p></p>
+
+	 <p id="item1-p29"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(a) types of washing products being used</strong></p><br>
+Parents use both <strong>soapy detergents</strong> and <strong>soapless detergents</strong> while washing with hard tap water.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(b) How the products works during washing</strong><br>
+Dirt on clothes is usually held by a thin layer of grease or oil. Soapless detergents remove dirt mainly by emulsification.</p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+A detergent molecule consists of two main parts:<br>
+<em><strong>•	A hydrophilic (polar) head,</strong> which is soluble in water.<br>
+<strong>•	A hydrophobic (non-polar) tail,</strong> which is soluble in grease and oil.</em><br>
+During washing, the detergent lowers the <strong>surface tension</strong> between water and grease.<br> 
+The hydrophobic tail attaches itself to the oily dirt on the cloth, while the hydrophilic head remains in the water.<br> 
+When the cloth is agitated, the grease is broken into tiny droplets surrounded by detergent molecules.<br> 
+These droplets are dispersed in water as an emulsion and are removed during rinsing, leaving the cloth clean.</p><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(c) Challenges associated with long-term use of the product</strong></p><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: red; font-size: 18px;"> 
+<strong>TO THE USER:</strong></p><br>
+III.	Skin irritation, burns or blisters may occur due to prolonged contact with detergent chemicals.<br>
+<strong>Mitigation measures:</strong></p><br>
+<em>•	Wash hands and skin thoroughly with clean water after washing clothes.<br>
+•	Use protective gloves when washing frequently.</em><br>
+IV.	Eye irritation, redness and pain may occur if the detergent comes into contact with the eyes, which may lead to temporary or permanent eye damage.<br>
+<strong>Mitigation measures:</strong></p><br>
+<em>•	Rinse the eyes immediately with plenty of clean water.<br>
+•	Seek medical attention if irritation persists.</em><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: red; font-size: 18px;"> 
+<strong>TO THE ENVIRONMENT:</strong></p><br>
+III.	Soapless detergents contain phosphates which promote excessive growth of algae (algal bloom) in water bodies reducing dissolved oxygen hence death of aquatic organisms.<br>
+<strong>Mitigation measures:</strong><br>
+<em>•	Proper disposal and treatment of detergent effluents.</em><br>
+IV.	Soapless detergents contain phosphates and other chemicals when poorly disposed in soil, alters soil pH, reduces soil fertility and interferes with soil microorganisms. This results to poor growth, yellowing of leaves, or reduced crop yields.<br>
+<strong>Mitigation measures:</strong><br>
+<em>•	Proper treatment and disposal of detergent effluents.</em><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(d) Evaluation of the products</strong><br>
+<strong>(i) Similarities between soapy and soapless detergents</strong><br>
+<em>•	Both are effective cleansing agents in soft water.<br>
+•	Both are salts of long-chain organic acids.<br>
+•	Both remove dirt by emulsification.</em><br>
+ <strong>(ii) Differences between soapy detergents and soapless detergents</strong><br>
+<em>•	Soapy detergents react with hard water to form scum, whereas soapless detergents do not form scum in either hard or soft water.<br>
+•	Soapy detergents are gentle on the skin, while soapless detergents may be harsh on prolonged use.<br>
+•	Soapy detergents are sodium or potassium salts of long-chain carboxylic acids, while soapless detergents are sodium salts of long-chain benzene sulphonic acids.<br>
+•	Soapy detergents cannot be used in strongly acidic solutions, whereas soapless detergents can be used in acidic solutions.<br>
+•	Soapy detergents are biodegradable, while soapless detergents are mostly non-biodegradable and may cause environmental pollution.</em><br>
+<strong>Conclusion / Advice</strong><br>
+<em>Therefore, Parents are advised to use soapless detergents when washing with hard water, since they clean effectively without forming scum and leaving stains on clothes.</em><br>
+</p>
+
+
+
+
+
+
+
+	 <p id="item1-p30"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: purple; font-size: 19px;text-align: center;border-bottom: 2px solid #c62828;"><strong>Medicines</strong> </p> 
+	 <p id="item1-p31"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(i)	Analgesics</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+Mugisha and Okello, two casual labourers from a nearby village, spent a whole day clearing bushes and digging in a plantation under the hot sun. In the evening, both developed body pains and headaches. Mugisha visited a nearby drug shop and was given pain-relief tablets, which he swallowed as directed. Okello, however, decided to use a home remedy by drinking hot water mixed with lemon juice and ginger extract. After several hours, Okello experienced only slight relief and wondered why the treatment was less effective. He later approached you for guidance.
+<br><strong>Task</strong><br>
+As a chemistry student;<br>
+(a) Help Mugisha and Okello understand how the nature of the products used suits their purpose.<br>
+(b) Explain what would happen to Mugisha after using the tablets for a long period of time.<br>
+(c) Explain why the process of relief was not the same for the two labourers.<br>
+</p>
+
+	 <p id="item1-p32"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(a) Category</strong><br>
+Mugisha took a modern medicine which is an analgesic, while Okello used a traditional/herbal analgesi.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>Function:</strong><br> 
+Analgesics work by <strong>inhibiting</strong> the transmission of pain signals to the brain, thereby <strong>relieving pain.</strong>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(b)   Challenges associated with long term use of modern analgesics</strong><br>
+I.	Modern analgesic medicine may trigger allergic reactions such as rashes, inflammation, or nausea hence discomfort.<br>
+<strong>Mitigation measures:</strong><br>
+<em>•	Take drugs under medical supervision and report any adverse reactions.</em><br>
+II.	Modern analgesic medicine contains chemicals which can cause addiction or over-dependency if used excessively.<br>
+<strong>Mitigation measures:</strong><br>
+<em>•	Take drugs only as prescribed by medical personnel.</em><br>
+III.	Long-term use of modern analgesic medicine can affect the liver, kidneys, or stomach lining.<br>
+<strong>Mitigation measures:</strong><br>
+<em>•	Follow dosage instructions, take medicine with food if recommended, and avoid prolonged unsupervised use.</em></p></p></p>
+<div class="note-card">
+  <p style="list-style: none; padding: 0;font-style:italic;color:red;"><strong>Point to note:</strong></p><p> </strong> Traditional medicine are safer but less potent, may cause mild stomach irritation if consumed in excess.
+Mitigation: Use moderate amounts and after meals.
+</p>
+</div><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(c) Comparison / Evaluation:</strong><br>
+<strong>(i)  Similarities</strong><br>
+<em>•	Both modern and traditional analgesics aim to relieve pain and reduce discomfort.<br>
+•	Both can improve daily functioning when someone is fatigued, injured, or unwell.</em><br>
+<strong>(ii)   Difference</strong><br> 
+However;<br>
+<em>•	Modern analgesics act faster and more effectively, while traditional remedies are mild and slower.<br>
+•	Modern analgesics have more side effects while herbal analgesics have fewer side effects.<br>
+•	Modern drugs contain precisely measured chemical compounds, whereas herbal remedies have variable concentrations of active components.</em><br>
+<strong>Choice / Advice:</strong><br> 
+<em>•	Modern analgesics are better because they are more effective for significant pain, but should be taken according to prescribed dosages.</em>
+</p>
+
+
+	 <p id="item1-p33"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(ii)	Antibiotics</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+Whenever Namukasa’s aunt felt unwell, she avoided visiting health centres and instead relied on home remedies such as chewing guava leaves, inhaling steam from eucalyptus, and drinking hot water mixed with crushed herbal seeds. On this occasion, she developed persistent cough, flu, high fever, and later convulsions. She was rushed to a nearby clinic where her body temperature was found to be very high. She was treated using tablets and an injection, after which her condition improved greatly.</p><br>
+<div class="img-wrap">
+  <img
+    src="Fig 6. Products used to treat Namukasa's aunt.jpg"
+    class="chem-img"
+    alt="Fig 6. Products used to treat Namukasa's aunt"
+    onerror="this.onerror=null; this.src='https://i.imgur.com/SPwJREF.jpeg';"
+  >
+
+  <span class="img-caption">
+    Fig 6. Products used to treat Namukasa's aunt
+  </span>
+</div> 
+
+<br>
+<strong>Task:</strong><br>
+As a chemistry learner;<br>
+(a) State the category of the products used to treat Namukasa’s aunt.<br>
+(b) Explain how the product(s) work to help her recover.<br>
+(c) Help her understand the challenges associated with long-term use of the product(s).<br>
+(d) Advise her on which product to use.<br>
+
+	 <p id="item1-p34"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(a)	Category of the products used</strong><br>
+Namukasa’s aunt used <strong>medicines</strong> which are both <strong>traditional/ herbal</strong> and <strong>Modern antibiotic medicines</strong> 
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(b)	How the product(s) work</strong><br>
+Antibiotics treat bacterial infections by killing bacteria or inhibiting their growth and multiplication in the body.
+By reducing or eliminating the bacteria, antibiotics help to lower body temperature, reduce fever, and relieve symptoms such as cough, flu, and convulsions, leading to recovery.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(c) Challenges associated with long-term use of the product(s) and mitigation</strong><br>
+I.	Kidney failure and liver damage may result from prolonged or improper use of antibiotics, which can eventually lead to death.<br>
+<strong>Mitigation measures:</strong><br>
+<em>•	Avoid self-medication and use antibiotics only when prescribed by a qualified health worker.</em><br>
+II.	Continuous headaches and general body discomfort may occur due to prolonged antibiotic use.<br>
+<strong>Mitigation measures:</strong><br>
+<em>•	Seek a doctor’s advice before taking any medication and complete the prescribed dose only.</em><br>
+III.	Allergic reactions such as skin rashes, itching, or swelling may occur in some individuals.<br>
+<strong>Mitigation measures:</strong><br>
+<em>•	Seek medical advice immediately if allergic reactions appear and avoid using the drug again.</em>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(d)  Evaluation between traditional and modern antibiotics</strong><br>
+<strong>(i)   Similarity</strong><br>
+<em>•	Both traditional and modern antibiotics treat bacterial infections by killing or limiting the growth of bacteria in the body.</em><br>
+<strong>(ii).   Differences</strong><br>
+<em>•	Traditional antibiotics are derived from plants or animal parts, while modern antibiotics are manufactured or synthesized by humans.<br>
+•	Traditional antibiotics have a slow and low response during treatment, whereas modern antibiotics have a fast and effective response in treating bacterial infections.</em><br>
+<strong>Advice:</strong><br>
+<em>•	Therefore, Namukasa’s aunt is advised to use <strong>modern antibiotics prescribed by medical personnel when treating serious bacterial infections</strong> such as cough and flue.
+</em></p></p></p></p>
+
+	 <p id="item1-p35"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(iii)	Psychotherapeutics</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+Whenever Mr. Kizito, a middle-aged businessman from Jinja, felt stressed or anxious, he avoided hospitals and instead relied on home remedies such as drinking warm milk mixed with honey, herbal teas made from passionflower leaves, and deep breathing. Recently, he developed persistent insomnia, anxiety, mood swings, and occasional panic attacks, which began to interfere with his work and family life. He was taken to a nearby hospital where he was diagnosed with an anxiety disorder and prescribed diazepam tablets and later fluoxetine. After some weeks, his condition improved significantly.
+<br><strong>Task:</strong><br>
+As a chemistry learner;<br>
+(a)	State the category of the products used to treat Mr. Kizito.<br>
+(b)	Explain how the product(s) work to help Mr. Kizito.<br>
+(c)	Help Mr. Kizito understand the challenges associated with long-term use of the product(s).<br>
+(d)	Advise Mr. Kizito on which product to use.<br></p>
+
+	 <p id="item1-p36"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(a) Category of the products used</strong><br>
+Mr. Kizito used medicines which are both traditional/herbal and Modern/synthetic psychotherapeutic drugs. 
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(b)	How the product(s) work</strong><br>
+Psychotherapeutic drugs work by either <strong>increasing or decreasing</strong> the activity of brain chemicals called neurotransmitters that control <strong>mood, behaviour and emotions, thereby reducing abnormal brain activity, calming the mind and improving mental balance.</strong><br> 
+As a result, they help to <strong>relieve conditions such as anxiety, depression and sleep disorders.</strong><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(c) Challenges associated with long-term use of the product(s)</strong><br>
+I.	Addiction and dependence, especially with drugs like diazepam, leading to difficulty functioning without the drug.<br>
+<strong>Mitigation measures:</strong><br>
+<em>•	Use psychotherapeutic drugs strictly under medical prescription and for the recommended duration only.</em><br>
+II.	Brain and memory impairment, such as poor concentration, drowsiness, or confusion after prolonged use.<br>
+<strong>Mitigation measures:</strong><br>
+<em>•	Regular medical review and dose adjustment by a health professional.</em><br>
+III.	Side effects and allergic reactions such as nausea, headaches, dizziness, or mood changes.<br>
+<strong>Mitigation measures:</strong><br>
+<em>•	Report side effects early and avoid self-medication.</em><br>
+(d)	Evaluation between traditional and modern psychotherapeutics
+<strong>(i)  Similarity</strong><br>
+<em>•	Both traditional and modern psychotherapeutic drugs aim to reduce stress, anxiety, and mental discomfort.</em><br>
+<strong><br>(ii)   Differences</strong><br>
+<em>•	Traditional psychotherapeutics are derived from plants while modern psychotherapeutics are synthetic and chemically formulated.<br>
+•	Traditional remedies act slowly and weakly, while modern psychotherapeutic drugs act faster and more effectively.<br>
+•	Modern psychotherapeutics have precise dosages and predictable effects, while traditional remedies have variable strength.<br>
+•	Modern psychotherapeutics have more side effects while herbal psychotherapeutics have less side effects.</em><br>
+<strong>Advice</strong><br>
+<em>Therefore, Mr. Kizito is advised to use <strong>modern psychotherapeutic drugs only as prescribed by medical personnel,</strong> especially for serious mental health conditions, while traditional remedies may be used as supportive or complementary measures, not as substitutes for proper medical treatment.
+</em></p></p></p>
+
+
+	 <p id="item1-p37"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(iv)	Mixed categories</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+Two students of a certain Secondary School, Moses and Brian, fell sick with similar symptoms and were taken to a nearby health centre where both were diagnosed with a bacterial infection. After returning home, each student bought medicine from different drug shops in their villages.
+After completing his medication, Moses fully recovered from the illness. However, Brian only felt relief from headache, while the bacterial infection continued.
+<br><strong>Task:</strong><br>
+As a chemistry learner;<br>
+(a)	Help to categorize the medicines the students bought.<br>
+(b)	State the function of the drugs used.<br>
+(c)	Explain the side effects of the drugs.<br>
+(d)	Evaluate the two drugs used by Moses and Brian.<br></p>
+
+	 <p id="item1-p38"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(a) Categorization of the medicines the students bought</strong><br>
+Moses bought <strong>an antibiotic, a type of modern medicine</strong> specifically used to treat bacterial infections.
+Brian bought <strong>an analgesic (pain killer), which is also a modern medicine </strong>used mainly to relieve pain, not to treat infections.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(b) Function of the drugs the students bought</strong><br>
+<em><strong>•	Antibiotics</strong> function by <strong>killing bacteria</strong> or preventing their multiplication in the body, thereby <strong>eliminating infections caused by bacteria.</strong></em><br>
+<em><strong>•	Analgesics</strong> function by <strong>blocking pain signals</strong> to the brain, hence reducing pain such as headache and body <strong>pain,</strong> but they do not destroy bacteria.</em><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(c) Side effects of the drugs and mitigation</strong><br>
+<strong>Antibiotics</strong><br>
+•	Long-term use may cause allergic reactions, stomach discomfort, and diarrhoea because antibiotics may interfere with normal body bacteria and react with stomach acids.
+<br><strong>Mitigation:</strong><br>
+<em>•	Avoid self-medication.<br>
+•	Take antibiotics only after medical prescription.<br>
+•	Complete the full dosage to avoid bacterial resistance.</em><br>
+<strong>Analgesics</strong><br>
+•	Prolonged use may cause stomach irritation, liver damage, or kidney problems due to accumulation of chemicals in the body.<br>
+<strong>Mitigation:</strong><br>
+<em>•	Use only recommended doses.<br>
+•	Avoid frequent use without consulting a health worker.</em><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(d) Evaluation of the two drugs</strong><br>
+<strong>(i)   Similarity:</strong><br>
+<em>•	Both antibiotics and analgesics are modern medicines.<br>
+•	Both are used to improve the patient’s health condition.</em><br>
+<strong>(ii).   Differences:</strong><br>
+<em>•	Antibiotics cure bacterial infections by killing or inhibiting bacteria ehile analgesics only relieve pain and do not treat the cause of bacterial infections.<br>
+•	Analgesics give temporary relief, while antibiotics offer a permanent solution when the infection is bacterial.</em><br>
+<strong>Conclusion / Advice</strong><br>
+<em>Brian is advised to <strong>use antibiotics prescribed by a qualified health worker</strong> so as to completely cure the bacterial infection, rather than relying on analgesics which only relieve pain temporarily.</em>
+
+
+
+
+
+
+	 <p id="item1-p39"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: purple; font-size: 19px;text-align: center;border-bottom: 2px solid #c62828;"><strong>Nuclear Processes </strong> </p> 
+	 <p id="item1-p40"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(i)	Nuclear fission</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+During the second world war, the cities of Hiroshima and Nagasaki in Japan were bombed using the most lethal weapon of the time, which caused massive destruction as shown in figure 1. However, the energy that was used can be useful in the treatment of cancerous growths in humans. Up to now the impact of the bombing is still being felt in Japan.
+ </p> 
+<div class="img-wrap">
+  <img
+    src="Fig 7. Radioactive waste during world war II.jpg"
+    class="chem-img"
+    alt="Fig 7. Radioactive waste during world war II"
+    onerror="this.onerror=null; this.src='https://i.imgur.com/vLS9X7P.jpeg';"
+  >
+
+  <span class="img-caption">
+    Fig 7. Radioactive waste during world war II
+  </span>
+</div> 
+
+<br>
+<br><strong>Task:</strong><br>
+As a learner of Chemistry;<br>
+a)	identify the type of bomb used and explain how it occurs.<br>
+b)	suggest any other use of the form of energy that was used in the bomb.<br>
+c)	explain the other danger associated with the form of energy in the bomb and give its mitigation.<br>
+
+
+	 <p id="item1-p41"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(a) Type of bomb used</strong></p><br>
+The bomb used was an <strong>atomic bomb (nuclear bomb)</strong>, which operates by nuclear fission. 
+In this process, a heavy nucleus, such as uranium-235, is split when <strong>bombarded by a fast-moving neutron</strong> to form smaller nuclei and release a large amount of energy known as Nuclear energy which caused massive destruction at the time. For example:</p>
+<p style="text-align:center;">
+\[
+{}^{235}_{92}\mathrm{U} + {}^{1}_{0}\mathrm{n}
+\;\longrightarrow\;
+{}^{92}_{36}\mathrm{Kr} + {}^{141}_{56}\mathrm{Ba}
++ 3\,{}^{1}_{0}\mathrm{n} + \text{energy}
+\]
+</p>
+	 <p style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: purple; font-size: 18px;"><strong>Watch videos bellow;</strong> </p>
+
+    <!-- ============ VIDEO 1 ============ -->
+<p style="text-align: left; border-bottom:none; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; color: orange; font-size: 18px;">
+  <strong>Explanation of Nuclear Fission</strong>
+</p>
+    <video id="video2a" class="chem-video" controls onerror="showYouTube('2a')">
+      <source src="part1_How_Atomic_Bomb_Works___Oppenheimer___Nuclear_Fission(720p).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <iframe id="yt2b" class="yt-video"
+      src="<iframe width="853" height="480" src="https://www.youtube.com/embed/caCO5WVMxLY" title="part 2 How Atomic Bomb Works   Oppenheimer   Nuclear Fission" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+
+<hr class="red-line">
+
+    <!-- ============ VIDEO 2 ============ -->
+<p style="text-align: left; border-bottom:none; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; color: orange; font-size: 18px;">
+  <strong>How Atomic Bomb Works</strong>
+</p>
+    <video id="video2b" class="chem-video" controls onerror="showYouTube('2b')">
+      <source src="part2_How_Atomic_Bomb_Works_Oppenheimer_Nuclear_Fission.mp4" type="video/mp4">
+    </video>
+
+    <iframe id="yt2b" class="yt-video"
+      src="<iframe width="853" height="480" src="https://www.youtube.com/embed/9E_70OjB_y0" title="part 2 How Atomic Bomb Works   Oppenheimer   Nuclear Fission" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+<hr class="red-line">
+
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(b) Other uses of the energy released</strong><br>
+<p><strong><em>The energy released during nuclear fission can be harnessed for peaceful purposes, including:</em></strong></p>
+<em>
+<ul>
+  <li>
+    Nuclear energy is used to heat water to produce high-pressure steam, which drives turbines connected to generators to produce <strong>electricity</strong> for homes, industries, and hospitals.
+  </li>
+  <li>
+    Nuclear energy is used in cancer <strong>treatment</strong> in which controlled radiation targets <strong>cancerous cells,</strong> destroying them while minimizing damage to surrounding healthy tissues.
+  </li>
+  <li>
+    Nuclear energy is used in <strong>food sterilization, material testing, and scientific research.</strong> For example, radiation can </strong>sterilize surgical instruments or preserve food</strong> by killing bacteria without using chemicals.
+  </li>
+</ul>
+</em>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(c) Other dangers associated with the energy and mitigation</strong><br>
+	I.  The radiations emitted during nuclear fission can have serious DNA mutations, causing hereditary defects and diseases.<br>
+<strong>Mitigation measures include:</strong><br>
+<em>	•	Wearing personal protective equipment (e.g., lead aprons, gloves) when working in radioactive areas.<br>
+	•	Limiting exposure and strictly regulating nuclear materials to protect workers and the public.</em><br>
+II.  The radiations emitted during nuclear fission can have serious skin burns, liver damage, and reduced fertility may result from exposure to high levels of radiation.<br> 
+<strong>Mitigation measures include:</strong><br>
+	<em>•	Proper disposal of radioactive waste in lead-lined containers or underground storage.<br>
+	•	Limiting exposure and strictly regulating nuclear materials to protect workers and the public.</em>
+
+
+	 <p id="item1-p42"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(ii)	Nuclear fusion</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+In 1968, the Russian T-3 Tokamak successfully heated plasma to 10 million kelvin, producing a huge amount of energy. Scientists discovered that combining deuterium and tritium, the isotopes of hydrogen, under extreme temperatures and pressures releases enormous energy. 
+<div class="img-wrap">
+  <img
+    src="Fig 8. Russian T-3 Tokamak heated plasma.jpg"
+    class="chem-img"
+    alt="Fig 8. Russian T-3 Tokamak heated plasma"
+    onerror="this.onerror=null; this.src='https://i.imgur.com/En4m15K.jpeg';"
+  >
+
+  <span class="img-caption">
+    Fig 8. Russian T-3 Tokamak heated plasma
+  </span>
+</div>
+
+<br>
+They believe that once technical challenges are solved, power plants could provide large amounts of clean and sustainable energy for industries, hospitals, and homes. If not carefully controlled, the energy could cause health and environmental hazards.
+<br><strong>Task:</strong><br> 
+As a learner of Chemistry:<br>
+(a)	Identify the type of reaction involved in the Tokamak and explains how its generated.<br>
+(b)	Suggest possible applications of the energy produced.<br>
+(c)	Explain the dangers associated with this energy and provide mitigation measures.<br>
+</p>
+
+	 <p id="item1-p43"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(a) Type of nuclear reaction involvedd</strong></p><br>
+The nuclear reaction involved is <strong>nuclear fusion.</strong><br> 
+In this process, <strong>light nuclei</strong> combine under extremely high temperature and pressure to form a heavier nucleus, releasing a very large amount of energy known as nuclear energy. 
+For example, when <strong>deuterium and tritium (isotopes of hydrogen)</strong> are combined in a Tokamak reactor, they <strong>form helium and release energy</strong> as shown below:
+<p style="text-align:center;">
+\[
+{}^{2}_{1}\mathrm{H} + {}^{3}_{1}\mathrm{H}
+\;\longrightarrow\;
+{}^{4}_{2}\mathrm{He} + {}^{1}_{0}\mathrm{n}
++ \text{energy}
+\]
+</p>
+	 <p style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: purple; font-size: 18px;"><strong>Watch videos bellow;</strong> </p>
+
+    <!-- ============ VIDEO 1 ============ -->
+<p style="text-align: left; border-bottom:none; padding-top: 10px; margin-top: 10px; margin-bottom: 10px; color: orange; font-size: 18px;">
+  <strong>Explanation of Nuclear Fusion</strong>
+</p>
+    <video id="video2a" class="chem-video" controls onerror="showYouTube('2a')">
+      <source src="part1_Nuclear_Fusion_Explained(720p).mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <iframe id="yt2b" class="yt-video"
+      src="<iframe width="853" height="480" src="https://www.youtube.com/embed/1P3y8Jl3zxI" title="part 2 How Atomic Bomb Works   Oppenheimer   Nuclear Fission" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+
+<hr class="red-line">
+
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(b) Other uses of the energy produced</strong></p><br>
+i	The energy released from nuclear fusion can be used for <strong>generation of electricity,</strong> where the energy heats water to produce steam that drives turbines connected to generators for homes and industries.<br>
+ii	It is also used in cancer treatment, where controlled radiation is used to destroy cancerous cells.<br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: black; font-size: 18px;"> 
+<strong>(c) Other dangers associated with the energy and mitigation</strong></p><br>
+i	Radiation exposure may cause <strong>cell damage, DNA mutations,</strong> and <strong>increased cancer risk.</strong><br>
+<strong>Mitigation measures include:</strong><br>
+<em>•	Use of protective shielding and radiation-monitoring devices.<br>
+•	Limiting exposure time and enforcing strict safety regulations.</em><br>
+ii	Excessive heat and radiation can damage equipment and injure workers.<br>
+<strong>Mitigation measures include:</strong><br>
+<em>•	Installation of effective cooling systems.<br>
+•	Regular maintenance and strict operational control of fusion facilities.</em><br>
+
+	 <p id="item1-p44"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(iii)	Radioactivity</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: blue; font-size: 18px;">
+<strong>ITEM 1:</strong></p><br>
+In the Kyebando area of Kampala, residents discovered that a nearby old building contained materials with unusual radiation. Some people reported nausea, skin irritation, and headaches after spending time near the site. Local authorities called in scientists and health officers to investigate.
+<br>The scientists explained that the building materials contained80g of Radon-222 gas, with a half-life of 3.8 days that spontaneously emitted radiations over time. Residents were curious about how fast the radioactive material can be removed form the nearby land due to its suspected risks. You werte contacted for assistance.
+<br><strong>Task:</strong><br>
+As a Chemistry student invited to a community awareness forum, help the residents to:<br>
+(a)	Identify the category of the nuclear process and explain how the process works.<br>
+(b)	Other uses of the process.<br>
+(c)	Determine how sample of radon will have remained after 7.6 days.<br>
+(d)	Discuss the effects of the radiation on humans and the environment and suggest mitigation measures.<br>
+
+	 <p id="item1-p45"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(a) Type of  reaction</strong></p><br>
+The type of reaction is a <strong>nuclear reaction</strong> specifically a <strong>radioactive decay process.</strong><br>
+In this process, an unstable nucleus, such as radon-222, spontaneously emits radiation in the form of alpha, beta, or gamma particles to form a more stable nucleus while releasing energy. For example:<br>
+<p style="text-align:center;font-style: italic;">
+\[
+{}^{222}_{86}\mathrm{Ra}
+\;\longrightarrow\;
+{}^{218}_{84}\mathrm{Po} + {}^{4}_{2}\mathrm{He}
++ \text{energy}
+\]
+</p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(b) Other uses of radioactive decay</strong></p><br>
+      <ul style="list-style: none; padding: 0; font-style: italic;">
+        <li>•	Radiation from isotopes like cobalt-60 and iodine-131 is used in cancer treatment to destroy cancerous cells while minimizing damage to surrounding healthy tissues.</li>
+		<li>•	Carbon-14 is used to determine the age of fossils and historical artifacts.</li>
+		<li>•	Radiation can be used in material testing, sterilization of surgical instruments, and food preservation by killing bacteria without chemicals.</li>
+		<li>•	Radionuclides can be used to trace pollutant movement or groundwater flow.</li>
+		</ul>
+ <p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(c) How sample of radon will have remained after 7.6 days.</strong></p><br>
+<div style="font-size: 16px; line-height: 1.7;">
+
+  <p><strong>Initial mass:</strong> \( M_0 = 80 \,\text{g} \) at \( t = 0 \)</p>
+  <p><strong>Time elapsed:</strong> \( t = 7.6 \,\text{days} \)</p>
+  <p><strong>Half-life:</strong> \( t_{\frac{1}{2}} = 3.8 \,\text{days} \)</p>
+  <p><strong>Remaining mass:</strong> \( M_t = ? \)</p>
+
+  <p><strong>Using the equation:</strong></p>
+  <p style="text-align:center;">
+    \[
+    M_t = \frac{M_0}{2^n}
+    \]
+  </p>
+
+  <p style="text-align:center;"><strong>Where:</strong> \( n \) is the number of half-lives</p>
+
+  <style="text-align:center;">
+    \[
+    n = \frac{t}{t_{\frac{1}{2}}}
+      = \frac{7.6}{3.8}
+      = 2
+    \]
+  </p>
+
+  <p style="text-align:center;">
+    \[
+    M_t = \frac{80}{2^2}
+         = \frac{80}{4}
+         = 20 \,\text{g}
+    \]
+  </p>
+
+  <p style="text-align:center;"><strong>Therefore:</strong> 20 g of Radon-222 will remain after 7.6 days.</p>
+
+  <hr class="red-line">
+
+</div>	
+ <p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(d) Other dangers associated with radioactive decay and mitigation.</strong></p><br>
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: red; font-size: 18px;">
+<strong>EFFECTS ON THE HEALTH:</strong></p><br>	
+ i.	The radiation emitted during radioactive decay can cause serious DNA mutations leading to hereditary defects or cancers such as leukemia.<br>
+<strong>Mitigation measures:</strong><br>
+<em>•	Wear personal protective equipment such as lead aprons, gloves, and masks when working near radioactive materials.</em><br>
+ii.	Skin burns, liver damage, and reduced fertility from exposure to high levels of radiation.<br>
+<strong>Mitigation measures:</strong><br>
+<em>	•	Limit exposure time and strictly regulate access to radioactive areas.<br>
+	•	Proper storage and disposal of radioactive materials in lead-lined containers or underground facilities.</em><br>
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: red; font-size: 18px;">
+<strong>EFFECTS ON THE ENVIRONMENT:</strong></p><br>
+i.	Contamination of soil and water can disrupt ecosystems and harm plants and animals.<br>
+<strong>Mitigation measures:</strong><br>
+<em>	•	Controlled disposal of radioactive waste and monitoring of contaminated sites.</em><br>
+ii. Bioaccumulation in the food chain may affect humans and wildlife.<br>
+<strong>Mitigation measures:</strong><br>
+<em>	•	Educating the public about radiation hazards and safe handling procedures.</em>
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: blue; font-size: 18px;">
+<strong>ITEM 2:</strong></p><br>
+Unstable atomic nuclei change into stable ones by releasing radiations in the process.
+In a cancer treatment department, a patient who is scheduled to receive radiotherapy is advised by the doctor to use cobalt-60 since it releases gamma rays that target and destroy cancer cells instead of lead-210 that releases alpha particles. 
+The patient needed to know the category of the process and its side effect before he can make a move about the decision to the treatment.<br> 
+<p style="text-align:center;">
+\[
+{}^{27}_{60}\mathrm{Co} 
+\;\longrightarrow\;
+{}^{28}_{60}\mathrm{Ni} + \gamma
+\]
+</p>
+<p style="text-align:center;">
+\[
+{}^{210}_{82}\mathrm{Pb} 
+\;\longrightarrow\;
+{}^{210}_{83}\mathrm{Bi} + {}^{0}_{-1}\mathrm{e}
++ \text{energy}
+\]
+</p>
+<br>
+You have been approached for guidance 
+<br><strong>Task:</strong><br> 
+As a learner of chemistry with knowledge on nuclear reactions help the patient to; <br> 
+(a)	identify the type of reactions the doctor talked about and how they occur.<br> 
+(b)	know any other function of the radiations released by cobalt other than the one explained by the doctor<br> 
+(c)	understand the negative consequence of the radiation released by cobalt and how it can be mitigated <br> 
+(b)	evaluate the radiations and the particles released by the reactions described<br> 
+
+	 <p style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(a) Type of reaction involved</strong></p><br>
+      <ul style="list-style: none; padding: 0;">
+        <li>•	The reactions are nuclear decay reactions/ radioactive decay.</li>
+        <li>•	 In radioactive decay, an unstable atomic nucleus changes into a more stable nucleus by releasing radiation spontaneously.</li>
+	    <li>•	 For example, cobalt-60 undergoes radioactive decay to form nickel-60 while emitting gamma radiation, and lead-210 decays by releasing a particle to form bismuth-210.</li>
+	  </ul>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(b) Other function of the radiation released by cobalt-60</strong></p><br>
+      <ul style="list-style: none; padding: 0;">
+        <li>•	Used for Sterilizing medical equipment, such as surgical instruments and syringes, by killing bacteria, viruses, and other pathogens.</li>
+        <li>•	Used in preserving food by destroying microorganisms that cause food spoilage.</li>
+	    <li>•	Applied in industrial radiography, where gamma rays are used to detect cracks and faults in metals and welds.</li>
+	  </ul>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(c) Negative consequence of gamma radiation and its mitigation</strong></p><br>
+<em>Excessive exposure to gamma radiation can cause serious health effects such as:</em><br>
+I.	Excessive exposure to gamma radiation can cause serious <strong>DNA mutations,</strong> due to damage to the genetic material of body cells, which may lead to <strong>cancer or hereditary defects.</strong>
+<br><strong>Mitigation:</strong><br>
+      <ul style="list-style: none; padding: 0;font-style:italic;">
+        <li>•	Limiting exposure time and maintaining a safe distance from radiation sources.</li>
+        <li>•	Wearing protective gear such as lead coats or lead shields when working with gamma radiation.</li>
+	  </ul><br>
+II.	Excessive exposure to gamma radiation can cause serious Skin burns and tissue damage when exposure is prolonged or intense.
+<br><strong>Mitigation:</strong><br>
+      <ul style="list-style: none; padding: 0;font-style:italic;">
+        <li>•	Wearing protective gear such as lead coats or lead shields when working with gamma radiation.</li>
+        <li>•	Proper control and regulation of radioactive materials in hospitals and laboratories.</li>
+	  </ul><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(d) Evaluation of the radiations and particles released</strong></p><br>
+<strong>(i)  Similarity</strong><br>
+      <ul style="list-style: none; padding: 0;font-style:italic;">
+        <li>•	Both gamma radiation and alpha particles are released during the spontaneous decay of unstable nuclei.</li>
+        <li>•	Both can cause harm to living tissues if exposure is not controlled.</li>
+	  </ul><br>
+<strong>(ii)  Differences</strong><br>
+      <ul style="list-style: none; padding: 0;font-style:italic;">
+        <li>•	Gamma radiation has a very high penetrating power, while alpha particles have a low penetrating power.</li>
+        <li>•	Gamma radiation is uncharged and has no mass, whereas alpha particles are positively charged and relatively heavy.</li>
+        <li>•	Gamma radiation is more suitable for cancer treatment because it penetrates deeply into body tissues, while alpha particles are easily stopped by skin or paper.</li>
+	  </ul><br>
+
+<div class="note-card">
+  <p style="list-style: none; padding: 0;font-style:italic;color:red;"><strong>Point to note:</strong></p><p> 
+	Cobalt-60 \({}^{60}_{27}\mathrm{Co}\) is preferred in radiotherapy because gamma radiation can penetrate deep into cancerous tissues and destroy them effectively when properly controlled, unlike alpha radiation which has limited penetration.
+</p>
+</div>
+
+	 <p id="item1-p46"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(iv)	Mixed categories</strong> </p> 
+
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+With the rapid growth of industries, hospitals, and urban centres in Uganda, the demand for reliable electricity has continued to increase. Energy experts have suggested adopting a new power-generation method based on changes occurring within the nuclei of certain elements like light isotpes of hydrogen and Uranium-235 are to be used. Although this source of energy is expected to support industrial growth many Ugandans are uncertain about its safety and environmental effects.
+</p><br><strong>Task:</strong><br>
+As a learner of Chemistry invited to advise national energy planners, help them understand:<br>
+e)	The category of the process(s) involved.<br>
+f)	How the process(s) work to solve Uganda’s energy challenges.<br>
+g)	The impact of the process(s) on the environment.<br>
+h)	An evaluation of the process(s), stating similarities and differences between them.<br>
+
+
+
+	 <p id="item1-p47"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(a) Category of the process involved</strong></p><br>
+The processes involved are <strong>nuclear reactions,</strong> which both <strong>Nuclear fission</strong> and <strong>Nuclear fusion</strong> 
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(b) How the processes produce energy</strong></p><br>
+<strong>Nuclear fission:</strong><br>
+A heavy nucleus e.g., uranium-235 is split when bombarded by a fast-moving neutron.<br>
+This produces smaller nuclei and releases large amounts of energy.<br>
+<p style="text-align:center;">
+\[
+{}^{235}_{92}\mathrm{U} + {}^{1}_{0}\mathrm{n}
+\;\longrightarrow\;
+{}^{92}_{36}\mathrm{Kr} + {}^{141}_{56}\mathrm{Ba}
++ 3\,{}^{1}_{0}\mathrm{n} + \text{energy}
+\]
+</p><br>
+In a nuclear reactor, this energy is used to heat water to produce high-pressure steam, which drives turbines connected to generators to produce electricity for industries, hospitals, and homes.
+<br><strong>Nuclear fusion:</strong><br>
+Light nuclei such as deuterium and tritium combine to form a heavier nucleus, releasing energy.<br>
+<p style="text-align:center;">
+\[
+{}^{2}_{1}\mathrm{H} + {}^{3}_{1}\mathrm{H}
+\;\longrightarrow\;
+{}^{4}_{2}\mathrm{He} + {}^{1}_{0}\mathrm{n}
++ \text{energy}
+\]
+</p>
+This energy can be harnessed in fusion power plants to produce clean, sustainable electricity.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(c) Impact of the process on the health and environment</strong></p><br>
+ i.	Radiation from nuclear reactions may cause DNA mutations, leading to hereditary defects, cancers like leukemia, and reduced fertility.<br>
+<strong>Mitigation:</strong><br>
+      <ul style="list-style: none; padding: 0;font-style:italic;">
+        <li>•	Use personal protective equipment (e.g., lead coats, gloves).</li>
+        <li>•	Proper warning signs, and radiation monitoring.</li>
+	  </ul><br>
+ ii.	Disposal of radioactive waste may cause soil, water, and air pollution, affecting ecosystems (plants, animals, and humans)<br>
+<strong>Mitigation:</strong><br>
+      <ul style="list-style: none; padding: 0;font-style:italic;">
+        <li>•	Dispose of radioactive waste safely in underground containment facilities or lead-lined storage.</li>
+	  </ul><br>	
+iii.	Accidental release of energy may damage equipment or cause uncontrolled radiation exposure.<br>
+<strong>Mitigation:</strong><br>
+      <ul style="list-style: none; padding: 0;font-style:italic;">
+        <li>•	Ensure strict operational controls, regular maintenance, and safety protocols.</li>
+	  </ul><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(d) Evaluation of the processes</strong></p><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(i)   Similarities:</strong></p><br>
+      <ul style="list-style: none; padding: 0;font-style:italic;">
+        <li>•	Both involve a large release of energy.</li>
+        <li>•	Both require an initial input of energy to initiate the reaction, a neutron for fission and extreme heat for fusion.</li>
+		<li>•	Both have potential applications in electricity generation, medical treatment, and scientific research.</li>
+	  </ul><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(ii)   Differences:</strong></p><br>
+      <ul style="list-style: none; padding: 0;font-style:italic;">
+	<li>•  Nuclear fission involves the splitting of heavy nuclei, such as thorium or plutonium, whereas nuclear fusion involves the joining of light nuclei, such as deuterium and tritium.</li>
+	<li>•  Nuclear fission releases a very high amount of energy per reaction, while nuclear fusion releases a relatively lower amount of energy per reaction.</li>
+	<li>•	Nuclear fission can be controlled in reactors, whereas nuclear fusion is difficult to control because it requires extremely high temperatures and pressures.</li>
+	<li>•	Nuclear fission produces long-lived radioactive waste, while nuclear fusion produces minimal radioactive waste that is easier to manage.</li>
+ </ul><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>Conclusion / Advice:</strong></p><br>
+      <ul style="list-style: none; padding: 0;font-style:italic;">
+	<li>•	Uganda should adopt nuclear fission reactors to generate electricity because more amount of nuclear energy is produced, but require careful waste management.</li>
+ </ul><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>Alternatively;</strong></p><br>
+      <ul style="list-style: none; padding: 0;font-style:italic;">
+	<li>•	Uganda should adopt nuclear fusion energy since it generates less radioactive waste than nuclear fission. </li>
+ </ul><br>
+<div class="note-card">
+  <p style="list-style: none; padding: 0;font-style:italic;color:red;"><strong>Point to note:</strong></p><p> Option 1- is more recommended.
+</p>
+</div>
+
+
+<a href="#toc-item1" class="back-toc-floating" title="Go to Contents">
+  &#8679; Go to Contents
+</a>
+
+    </div>
+  </div>
+
+
+
+
+
+  <div class="section card">
+    <button onclick="toggle('item2')">📝 ITEM 2: APPRECIATES THE DIVERSITY AND INTERACTIONS OF SUBSTANCES AND THEIR IMPORTANCE IN LIFE</button>
+    <div id="item2" class="section-content">
+     <p style="text-align: center;border-bottom:1.5px solid #ccc;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: red; font-size: 18px;"><strong>APPROACH TO SECTION A – ITEM 2 (Competency-Based)</strong> </p>  
+	 <p style="text-align: left;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 10px;color: dark blue; font-size: 15px; color:#040273;"><strong>ITEM FORMAT</strong> </p>
+
+	  <P style="text-align: left; border-bottom: none; padding-top: 10px; margin-top: 10px;margin-bottom: 10px; magin-left:100px">    
+	  <strong>1.	Classification and Identification</strong>
+      <ul style="list-style: none; padding: 2;">
+        <li><em>•	Identify the <strong>category</strong> of the element, compound, substance, or material presented in the scenario.</em></li>
+        <li><em>•	Justify the classification using a <strong>relevant definition or scientific fact.</strong></em></li>
+        <li><em>•	Give <strong>one appropriate example</strong> related to the scenario.</em></li>
+      </ul>
+	  </p> 
+	  <P style="text-align: justify-content; border-bottom: none; padding-top: 10px; margin-top: 10px;margin-bottom: 10px; magin-left:100px">    
+	  <strong>2.	Properties / Characteristics</strong>
+      <ul style="list-style: none; padding: 2;">
+        <li><em>•	Outline <strong>at least four key properties or characteristics</strong> of the identified element, compound, substance, or material.</em></li>
+      </ul>
+	  </p>	  
+	  <P style="text-align: left; border-bottom: none; padding-top: 10px; margin-top: 10px;margin-bottom: 10px; magin-left:100px">  
+	  <strong>3.	Use / Application</strong>
+      <ul style="list-style: none; padding: 2;">
+        <li><em>•	State <strong>one practical use</strong> of the identified element, compound, substance, or material.</em></li>
+      </ul>
+	  </p>
+
+	  <P style="text-align: left; border-bottom: none; padding-top: 10px; margin-top: 10px;margin-bottom: 10px; magin-left:100px">  
+	  <strong>4.	Impact and Mitigation</strong>
+      <ul style="list-style: none; padding: 2;">
+        <li><em>•	State <strong>one impact</strong> (environmental or health) associated with the identified element, compound, substance, or material.</em></li>
+        <li><em>•	Propose one <strong>suitable mitigation measure</strong> to reduce or control the stated impact.</em></li>
+        <li><em>-<strong>One difference</strong></em></li>
+      </ul>
+	  </p>
+	  
+	  <P style="text-align: left; border-bottom: none; padding-top: 10px; margin-top: 10px;margin-bottom: 10px; magin-left:100px">  
+	  <strong>Areas of Assessment</strong>
+      <p style="font-style: italic; font-weight:bold;"><strong>Assessment in Item 2 may be drawn from the following topics:</strong></p>
+	  <ul style="list-style: none; padding: 2;">
+        <li>✔  Elements, compounds, and mixtures</li>
+        <li>✔  The periodic table</li>
+        <li>✔  Periodic trends</li>
+        <li>✔  Structure and bonding</li>
+        <li>✔  Chemical formulae, stoichiometry, and the mole concept</li>
+        <li>✔  Use of materials</li>
+        <li>✔  Carbon in life (hydrocarbons and polymers)</li>
+        <li>✔  Reactivity series and alloys</li>
+        <li>✔  Polymers and plastics</li>
+        <li>✔  Air: rusting and combustion</li>
+        <li>✔  Biogas</li>
+        <li>✔  Fertilizers</li>
+      </ul>
+	  </p>
+     <p style="text-align: center;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 5px;color: green; font-size: 20px;"><strong>Sample Questions</strong> </p> 	  
+     <p style="text-align: center;border-bottom:none;padding-top: 0px; margin-top: 0px;margin-bottom: 5px;color: black; font-size: 11px italic;"><strong><em>(To be attempted using the above approach)</em></strong> </p> 	  
+
+    <!-- ===== TABLE OF CONTENTS ===== -->
+<div id="toc-item2" class="toc-box">
+  <p style="text-align: center; color:#040273;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px; font-size: 20px;"><strong>Contents</strong></p>
+  <ul class="toc-list">
+    <li style="border-bottom: 0.5px solid #c62828;"><a href="#item2-p1" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: purple; font-size: 19px;">1.  Elements, compounds, and mixtures</a></li>
+    <li><a href="#item2-p2" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(i)  	Elements</a></li>
+    <li><a href="#item2-p3" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;">Response</a></li>
+    <li><a href="#item2-p4" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(ii)  Compounds</a></li>
+    <li><a href="#item2-p5" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item2-p6" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(iii)  Mixtures</a></li>
+    <li><a href="#item2-p7" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item2-p8" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">ALLOYS</a></li>
+    <li><a href="#item2-p9" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;">Response</a></li>
+    <li style="border-bottom: 0.5px solid #c62828;"><a href="#item2-p10" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: purple; font-size: 19px;">2.  The periodic table</a></li>
+    <li><a href="#item2-p11" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;">Response</a></li>
+    <li style="border-bottom: 0.5px solid #c62828;"><a href="#item2-p12" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: purple; font-size: 19px;">3.  Periodic trends</a></li>
+    <li><a href="#item2-p13" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(i)  Meltig Point Across a Period</a></li>
+    <li><a href="#item2-p14" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item2-p15" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(ii)  Boiling Point Across a Period</a></li>
+    <li><a href="#item2-p16" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item2-p17" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(iii)	Densities of Period 3 Elements</a></li>
+    <li><a href="#item2-p18" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item2-p19" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(iv)	Reaction of elements with water, oxygen and chlorine across a period</a></li>
+    <li><a href="#item2-p20" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item2-p21" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(v)	Trends in Hardness down the groups</a></li>
+    <li><a href="#item2-p22" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item2-p23" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(vi)	Trends in Density down the group</a></li>
+    <li><a href="#item2-p24" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item2-p25" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(vii)	Trend in reactivity of elements with water down the group</a></li>
+    <li><a href="#item2-p26" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+	<li style="border-bottom: 0.5px solid #c62828;"><a href="#item2-p27" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: purple; font-size: 19px;">4.  Structure and bonding</a></li>
+    <li><a href="#item2-p28" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;">Response</a></li>
+	<li style="border-bottom: 0.5px solid #c62828;"><a href="#item2-p29" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: purple; font-size: 19px;">5.  Chemical formulae, stoichiometry, and the mole concept</a></li>
+    <li><a href="#item2-p30" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(i)  Chemical formulae</a></li>
+    <li><a href="#item2-p31" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item2-p32" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(ii)  Stoichiometry</a></li>
+    <li><a href="#item2-p33" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response Item 1</a></li>
+    <li><a href="#item2-p34" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;">Response Item 2</a></li>
+    <li style="border-bottom: 0.5px solid #c62828;"><a href="#item2-p35" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: purple; font-size: 19px;">6.  Using materials</a></li>
+    <li><a href="#item2-p36" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li style="border-bottom: 0.5px solid #c62828;"><a href="#item2-p37" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: purple; font-size: 19px;">7.  Polymers and plastics</a></li>
+    <li><a href="#item2-p38" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;">Rsponse-Item 1</a></li>
+    <li><a href="#item2-p39" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response-Item 2</a></li>
+    <li style="border-bottom: 0.5px solid #c62828;"><a href="#item2-p40" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: purple; font-size: 19px;">8.  Air: rusting and combustion</a></li>
+    <li><a href="#item2-p41" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(i)	Rusting</a></li>
+    <li><a href="#item2-p42" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+    <li><a href="#item2-p43" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;">(ii)	Combustion</a></li>
+    <li><a href="#item2-p44" style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 19px;"> Response</a></li>
+  </ul>
+</div>
+
+<hr class="red-line">
+
+
+	 <p id="item2-p1"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: purple; font-size: 19px;text-align: center;border-bottom: 2px solid #c62828;"><strong>Elements, compounds, and mixtures</strong> </p> 
+	 <p id="item2-p2"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(i)  	Elements</strong> </p> 
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+In a trading centre near Luwero, villagers are setting up a small workshop and a community health unit.
+They use iron to make tools and roofing sheets, oxygen at the health unit, and silicon in solar panels installed to provide electricity.
+Some villagers do not understand how these substances differ or why different materials are chosen for different purposes. They are also concerned about the effects of using these substances on the environment.
+They have therefore consulted you, as a student of chemistry, for help.</p><br>
+<strong>Task</strong><br>
+As a student of chemistry, help the villagers to:<br>
+(a)	Explain the category of each element used.<br>
+(b)	Explain the properties of the elements that make them suitable for their uses.<br>
+(c)	State the uses of each element in daily life.<br>
+(d)	Explain one environmental impact of using each one of the elements and suggest a mitigation measure.<br>
+
+	 <p id="item2-p3"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(a)	Category of the elements</strong></p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>Iron (Fe)</strong></p>
+Iron is a <strong>metal.</strong><br>
+<strong>Reason:</strong> It <strong>loses electrons</strong> from its outermost shell to form positive ions (cations).<br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>Oxygen (O)</strong></p><br>
+Oxygen is a <strong>non-metal.</strong><br>
+<strong>Reason:</strong> It <strong>gains electrons </strong>during chemical reactions to form negative ions or shares electrons in covalent bonding.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>Silicon (Si)</strong></p><br>
+Silicon is a <strong>metalloid (semi-metal).</strong><br>
+<strong>Reason:</strong> It shows properties intermediate between <strong>metals and non-metals</strong> and mainly forms covalent bonds.
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(b)	Properties of the elements</strong></p><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: red; font-size: 18px;"> 
+<strong>Iron</strong></p><br>
+    <ul style="list-style: none; padding: 0;">
+    <li>•	Has a high melting point</li>
+    <li>•	Conducts heat and electricity</li>
+	<li>•	Is malleable and ductile</li>
+	<li>•	Is hard and strong</li>
+	<li>•	Has a shiny surface when polished</li>
+  </ul>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: red; font-size: 18px;"> 
+<strong>Oxygen</strong></p><br>
+    <ul style="list-style: none; padding: 0;">
+	<li>•	Exists as a gas at room temperature</li>
+	<li>•	Supports combustion</li>
+	<li>•	Is slightly soluble in water</li>
+	<li>•	Is chemically reactive with many elements</li>
+  </ul>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: red; font-size: 18px;"> 
+<strong>Silicon</strong></p><br>
+    <ul style="list-style: none; padding: 0;">
+	<li>•	Has a high melting point</li>
+	<li>•	Is a poor conductor of electricity at room temperature but conducts when heated or doped</li>
+	<li>•	Is hard and brittle</li>
+	<li>•	Has a shiny appearance</li>
+  </ul>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(c)	Uses of the elements</strong></p><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: red; font-size: 18px;"> 
+<strong>Iron</strong></p><br>
+    <ul style="list-style: none; padding: 0;">
+	<li>•	Used in making tools, roofing sheets and construction materials</li>
+	<li>•	Used in the manufacture of machines and vehicles</li>
+  </ul>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: red; font-size: 18px;"> 
+<strong>Oxygen</strong></p><br>
+    <ul style="list-style: none; padding: 0;">
+	<li>•	Used for breathing in hospitals</li>
+	<li>•	Used in welding and metal cutting</li>
+	<li>•	Used in combustion processes in industries</li>
+  </ul>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: red; font-size: 18px;"> 
+<strong>Silicon</strong></p><br>
+    <ul style="list-style: none; padding: 0;">
+	<li>•	Used in the manufacture of solar panels</li>
+	<li>•	Used in making electronic components such as transistors and computer chips</li>
+	<li>•	Used in the manufacture of glass when combined with oxygen</li>
+  </ul>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(d)	Environmental impact and mitigation (for all three elements)</strong></p><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: red; font-size: 18px;"> 
+<strong>Iron</strong></p><br>
+<strong>Impact:</strong> Rusting of iron structures leads to environmental waste and weak structures.<br>
+<strong>Mitigation:</strong> <em>Painting, oiling or galvanising iron to prevent rusting.</em><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: red; font-size: 18px;"> 
+<strong>Oxygen</strong></p><br>
+<strong>Impact:</strong> High oxygen concentration can increase the rate of fires and combustion.<br>
+<strong>Mitigation:</strong><em> Proper storage and controlled use of oxygen cylinders.</em><br>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: red; font-size: 18px;"> 
+<strong>Silicon</strong></p><br>
+<strong>Impact:</strong> Mining of silicon (sand) can cause land degradation and soil erosion.<br>
+<strong>Mitigation:</strong><em> Controlled mining and land reclamation after mining activities.</em><br>
+
+<div class="note-card">
+  <p style="list-style: none; padding: 0;font-style:italic;color:red;"><strong>Point to note:</strong></p><p> Other examples of elements may be seen as follows;
+</p>
+        <table>
+        <tr><th><span style="color: red;">ELEMENT</span></th><th><span style="color: red;">CATEGORY OF ELEMENT WITH REASON</span></th><th><span style="color: red;">PROPERTIES OF ELEMENTS</span></th><th><span style="color: red;">USES OF ELEMENTS</span></th><th><span style="color: red;">IMPACT ON THE ENVIRONMENT AND MITIGATION</span></th></tr>
+        <tr><td>Sodium</td><td><strong>Metal</strong><br> Loses outermost electron to form a cation</td><td><ul style="list-style: none; padding: 0;"><li>-High melting point </li><li>-Ductile </li>-Light weight <li>-Conducts electricity</li>-Soft <li>-Shinny appearances</li></ul></td><td><ul style="list-style: none; padding: 0;"><li>- Used as a coolant in nuclear reactor</li><li>- Used to make alloys like sodium amalgam </li><li>- Used as a reducing agent in extraction</li></ul></td><td><ul style="list-style: none; padding: 0;"><li>- High level of sodium can disrupt natural ecosystems in area where plants and animals are adapted to salty conditions leading to change in biodiversity </li><li><strong>Mitigation:</strong><br> Reduced use of sodium based fertilizers</li></ul></td></tr>
+        <tr><td>Magnesium</td><td><strong>Metal</strong><br> Loses outermost electron to form a cation</td><td><ul style="list-style: none; padding: 0;"><li>-High melting point</li><li>-Conducts electricity</li><li>-Strong</li></ul></td><td><ul style="list-style: none; padding: 0;"><li>-   Used as a fertilizer to replenish soil nutrients and promote plant growth</li><li>-     Used to make alloys like duralumin</li><li>-     Used in electronic devices such as laptops and cameras</li></ul></td><td><ul style="list-style: none; padding: 0;"><li>-Over application of magnesium-containing fertilizers can lead to soil contamination and nutrient imbalances, affecting plant growth and soil health</li><li><strong>Mitigation:</strong><br> Adopt nutrient management practices</li></ul></td></tr>
+        <tr><td>Aluminium</td><td><strong>Metal</strong><br> Loses outermost electron to form a cation</td><td><ul style="list-style: none; padding: 0;"><li>-Conducts electricity</li><li>-Malleable</li><li>-Strong</li><li>-Sonorous</li><li>-Corrosion resistant</li></ul></td><td><ul style="list-style: none; padding: 0;"><li>-Used in packaging materials such as foil wraps</li><li>-Used in construction ie roofing, window frames and doors</li><li>-Used in electrical transmission</li><li>- Making cookware, furniture and electronic casing </li></ul></td><td><ul style="list-style: none; padding: 0;"><li>-Aluminium products such as packaging materials contribute to landfill waste</li><li><strong>Mitigation:</strong><br> Recycling</li></ul></td></tr>
+        <tr><td>Phosphorus</td><td><strong>Non- metal:</strong><br>Gains electrons to form anion</td><td><ul style="list-style: none; padding: 0;"><li>-Soft</li><li>-Waxy solid that glows in the dark</li></ul></td><td><ul style="list-style: none; padding: 0;"><li>-Used to make match heads </li><li>-Used to make alloys </li><li>-Used in production of phosphoric acid which is used to make fertilizers.</li></ul></td><td><ul style="list-style: none; padding: 0;"><li>Excess phosphorus in water bodies causes algal blooms, reducing oxygen and harming aquatic life.</li><li><strong>Mitigation:</strong><br> controlling fertilizer runoff to mitigate environmental eutrophication.</li></ul></td></tr>
+      </table>
+</div>
+
+
+	 <p id="item2-p4"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 0px;color: brown; font-size: 18px;"><strong>(ii)  Compounds</strong> </p> 
+	 <p style="text-align: justify;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 10px;color: black; font-size: 18px;">
+In a small industrial village, three workplaces use different substances in their operations. A food-processing factory uses sodium chloride for preserving and seasoning foods, a chemical laboratory uses carbon dioxide gas for experiments and fire extinguishers, and a metal workshop uses copper for wiring and machinery parts. Some residents mistakenly think all these substances are elements and are concerned about safety and environmental impacts. They have approached you, a student of chemistry, to clarify the situation.
+</p><br><strong>Task</strong><br>
+As a chemistry learner, help the residents to; <br>
+(a)	explain the category and nature of each compound. <br>
+(b)	describe how each compound is formed. <br>
+(c)	explain two properties of each compound based on its structure. <br>
+(d)	state one use of each compound in daily life or industry. <br>
+(e)	explain one environmental or health impact associated with each compound and  mitigation.<br>
+
+	 <p id="item2-p5"
+	 style="text-align: left;border-bottom:none;padding-top: 10px; margin-top: 20px;margin-bottom: 20px;color: hotpink; font-size: 18px;"><strong>Response</strong> </p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(a) Explain the category of each compound</strong></p>
+    <ul style="list-style: none; padding: 0;">
+	<li><strong>•	Sodium chloride (NaCl):</strong> Ionic compound, formed by complete transfer of electrons from a metal (sodium) to a non-metal (chlorine) creating oppositely charged ions.</li>
+	<li><strong>• Carbon dioxide CO<sub>2</sub>:</strong> Covalent compound, formed by sharing electrons between two non-metal atoms (carbon and oxygen) to achieve stable electron configurations.</li>
+	<li><strong>•	Copper (Cu):</strong> Metallic compound (elemental metal), composed of metal atoms in a lattice with delocalized electrons forming metallic bonds.</li>
+  </ul>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(b) Explain the properties of the compounds based on their structures</strong></p>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>Sodium chloride:</strong></p>
+    <ul style="list-style: none; padding: 0;">
+	<li>o	High melting and boiling points due to strong electrostatic forces between ions.</li>
+	<li>o	Soluble in water and conducts electricity when molten or in solution.</li>
+	<li>o	Exists as a crystalline solid at room temperature.</li>
+  </ul>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>Carbon dioxide:</strong></p>
+    <ul style="list-style: none; padding: 0;">
+	<li>o	Low melting and boiling points due to weak van der Waals forces between molecules.</li>
+	<li>o	Does not conduct electricity because there are no free ions.</li>
+	<li>o	Exists as a gas at room temperature.</li>
+  </ul>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>Copper:</strong></p>
+    <ul style="list-style: none; padding: 0;">
+	<li>o	High melting and boiling points due to strong metallic bonding.</li>
+	<li>o	Good conductor of heat and electricity because of delocalized electrons.</li>
+	<li>o	Malleable and ductile, can be drawn into wires or sheets.</li>
+  </ul>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(c) State one use of each compound</strong></p>
+    <ul style="list-style: none; padding: 0;">
+	<li>•	Sodium chloride: Used in food processing and preservation, seasoning foods.</li>
+	<li>•	Carbon dioxide: Used in fire extinguishers and chemical laboratory experiments.</li>
+	<li>•	Copper: Used in electrical wiring, machinery, and plumbing.</li>
+  </ul>
+<p style="text-align: justify;border-bottom:none;padding-top: 0px; margin-top: 10px;margin-bottom: 5px;color: black; font-size: 18px;"> 
+<strong>(d) Explain one environmental or health impact of each compound and suggest a mitigation measure</strong></p>
+    <ul style="list-style: none; padding: 0;">
+	<li>•	<strong>Sodium chloride:</strong> Excess use can lead to soil salinity, affecting crop growth. </li>
+	<li><strong>Mitigation:</strong><br><em> Regulate usage and dispose of excess salt safely.</em></li>
+  </ul>
+    <ul style="list-style: none; padding: 0;">
+	<li><strong>•	Carbon dioxide:</strong> Accumulation in the atmosphere contributes to greenhouse effect and global warming.</li>
+	<li><strong>Mitigation:</strong> Capture and store CO<sub>2</sub> emissions and promote afforestation.</li>
+  </ul>
+    <ul style="list-style: none; padding: 0;">
+	<li><strong>•	Copper:</strong> Improper disposal of copper waste can contaminate soil and water, harming aquatic life.</li>
+	<li><strong>Mitigation:</strong> Recycle copper scraps and treat industrial effluents before release.</li>
+  </ul>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <ul style="list-style: none; padding: 0;">
+	<li></li>
+	<li></li>
+	<li></li>
+  </ul>
+
+
+<a href="#toc-item2" class="back-toc-floating" title="Go to Contents">
+  &#8679; Go to Contents
+</a>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="section card">
+    <button onclick="toggle('item3and4')">📝 ITEM 3 and 4: </button>
+    <div id="item3and4" class="section-content">
+      <p><strong>Question:</strong> Define isotopes.</p>
+
+    </div>
+  </div>
+
+
+
+
+
+  <div class="section card">
+    <button onclick="toggle('item5and6')">📝 ITEM 5 and 6: </button>
+    <div id="item5and6" class="section-content">
+      <p><strong>Question:</strong> Define isotopes.</p>
+
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="section card">
+    <button onclick="toggle('Exam1')" >📝 Examination Papers to be completed by Learner</button>
+    <div id="Exam1" class="section-content">
+      <p><strong>Question:</strong> Define isotopes.</p>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<!-- ================= UACE ================= -->
+<div id="uace" class="hidden">
+
+  <div class="section card">
+    <button onclick="toggle('topic1')">⚗️ MOLES AND EQUATIONS</button>
+    <div id="topic1" class="section-content">
+      <p>Advanced chemistry content here.</p>
+    </div>
+  </div>
+
+  <div class="section card">
+    <button onclick="toggle('topic2')">⚗️ ATOMIC AND ELECTRONIC STRUCTURE</button>
+    <div id="topic2" class="section-content">
+      <p>Advanced chemistry content here.</p>
+    </div>
+  </div>
+
+
+
+
+
+<P> S.5 Exam worked and Practice Scenario questions</P>
+  
+ <div class="section card">
+    <button onclick="toggle('uaceExam')">📝 ITEM 1</button>
+    <div id="uaceExam" class="section-content">
+      <p> A SPECTROMETER.</p>
+      <button onclick="toggle('uaceAns')">Show Answer</button>
+      <div id="uaceAns" class="hidden">
+        <p>
+          Atoms of the same element with the same atomic number
+          but different mass numbers.
+        </p>
+      </div>
+    </div>
+  </div>
+
+ <div class="section card">
+    <button onclick="toggle('uaceExam2')">📝 ITEM 2</button>
+    <div id="uaceExam2" class="section-content">
+      <p> ORGANIC.</p>
+      <button onclick="toggle('uaceAns2')">Show Answer</button>
+      <div id="uaceAns2" class="hidden">
+        <p>
+          Atoms of the same element with the same atomic number
+          but different mass numbers.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="adminPanel" class="card admin hidden">
+  <h3>Admin Panel (Teachers Only)</h3>
+  <p>Authorized Emails:</p>
+  <ul id="emailList"></ul>
+</div>
+
+<script>
+/* ================= AUTH DATABASE ================= */
+/* EDIT EMAILS HERE */
+const users = {
+  "student@gmail.com": "student",
+  "teacher@school.ac.ug": "teacher",
+  "chemistryseries01@gmail.com": "teacher"
+};
+
+let currentRole = "";
+
+/* ================= LOGIN ================= */
+function login() {
+  const email = document.getElementById("email").value.trim().toLowerCase();
+  const error = document.getElementById("error");
+
+  error.textContent = "";
+
+  if (!email) {
+    error.textContent = "Please enter your email.";
+    return;
+  }
+
+  if (users[email]) {
+    currentRole = users[email];
+
+    document.getElementById("login").classList.add("hidden");
+    document.getElementById("dashboard").classList.remove("hidden");
+
+    document.getElementById("userInfo").textContent =
+      `Logged in as ${email} (${currentRole})`;
+
+    if (currentRole === "teacher") {
+      document.getElementById("adminPanel").classList.remove("hidden");
+      loadEmails();
+    }
+  } else {
+    error.textContent = "Access denied. Email not authorized.";
+  }
+}
+
+/* ================= UI FUNCTIONS ================= */
+function toggle(id) {
+  const el = document.getElementById(id);
+  el.style.display = el.style.display === "block" ? "none" : "block";
+}
+
+function showLevel(level) {
+  document.getElementById("uce").classList.add("hidden");
+  document.getElementById("uace").classList.add("hidden");
+  document.getElementById(level).classList.remove("hidden");
+}
+
+/* ================= ADMIN ================= */
+function loadEmails() {
+  const list = document.getElementById("emailList");
+  list.innerHTML = "";
+  for (let email in users) {
+    const li = document.createElement("li");
+    li.textContent = `${email} (${users[email]})`;
+    list.appendChild(li);
+  }
+}
+</script>
+<script>
+/* ========= BASIC PROTECTION ========= */
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("keydown", e => {
+  if (
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && e.key === "I") ||
+    (e.ctrlKey && e.key === "U")
+  ) {
+    e.preventDefault();
+  }
+});
+</script>
+</body>
+</html>
+
+     <button onclick="logout()">Logout</button>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+      const passcodes = [
+        "20221R1z","20221R2y","20221R3x","20221R4w","20221R5v",
+        "20221R6u","20221R7t","20221R8s","20221R9r","20221R10q",
+        "20221R11p","20221R12o","20221R13n","20221R14m","20221R15l",
+        "20221R16k","20221R17j","20221R18i","20221R19h","20221R20g",
+        "20221R21f","20221R22e","20221R23d","20221R24c","20221R25b",
+        "20221R26a","20221R27n","20221R28c","20221R29c","2025R30d"
+      ];
+      const adminPass = "admin123";
+
+      function login() {
+        const id = parseInt(document.getElementById("loginId").value);
+        const pass = document.getElementById("loginPass").value;
+
+        if (id === 0 && pass === adminPass) {
+          document.getElementById("loginSection").classList.add("hidden");
+          document.getElementById("adminSection").classList.remove("hidden");
+          generateAdminSummary();
+          return;
+        }
+
+        if (id >= 1 && id <= 31 && pass === passcodes[id - 1]) {
+          document.getElementById("loginSection").classList.add("hidden");
+          document.getElementById(`member${id}`).classList.remove("hidden");
+        } else {
+          alert("Invalid ID or passcode.");
+        }
+      }
+
+      function logout() {
+        location.reload();
+      }
+
+      function generateAdminSummary() {
+        const summaryDiv = document.getElementById("adminSummary");
+        const table = document.createElement("table");
+        table.innerHTML = "<tr><th>Member</th><th>Date</th><th>Type</th><th>Amount</th></tr>";
+
+        for (let i = 1; i <= 31; i++) {
+          const rows = document.querySelectorAll(`#member${i} table tr`);
+          rows.forEach((row, idx) => {
+            if (idx === 0) return; // Skip header
+            const cells = row.querySelectorAll("td");
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+              <td>Member ${i}</td>
+              <td>${cells[0]?.textContent || ""}</td>
+              <td>${cells[1]?.textContent || ""}</td>
+              <td>${cells[2]?.textContent || ""}</td>
+            `;
+            table.appendChild(newRow);
+          });
+        }
+
+        summaryDiv.innerHTML = "";
+        summaryDiv.appendChild(table);
+      }
+
+      function exportToExcel() {
+        const table = document.querySelector("#adminSummary table");
+        const wb = XLSX.utils.table_to_book(table, {sheet: "Members"});
+        XLSX.writeFile(wb, "SACCO_Records.xlsx");
+      }
+  function printStatement(button) {
+  const section = button.closest("section");
+  const content = section.querySelector(".statement").innerHTML;
+  const printWindow = window.open("", "", "width=800,height=600");
+  printWindow.document.write(`
+    <html><head><title>Print Statement</title></head><body>
+    <h2>${section.querySelector("h2").textContent}</h2>
+    ${content}
+    </body></html>`);
+  printWindow.document.close();
+  printWindow.print();
+}
+
+    </script>
+  </main>
+<script>
+/* ========= BASIC PROTECTION ========= */
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("keydown", e => {
+  if (
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && e.key === "I") ||
+    (e.ctrlKey && e.key === "U")
+  ) {
+    e.preventDefault();
+  }
+});
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parallax Background</title>
+
+<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CONTENT */
+.parallax-content {
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+  padding: 30px;
+  max-width: 700px;
+  z-index: 2;
+}
+
+.parallax-content h1 {
+  font-size: 2.1rem;
+  margin-bottom: 15px;
+}
+
+.parallax-content p {
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* START BUTTON */
+.start-btn {
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #66004e;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.start-btn:hover {
+  background-color: #8900b3;
+  transform: scale(1.05);
+}
+
+/* SEPARATOR HR */
+.hr-separator {
+  border: none;
+  height: 4px;
+  background: linear-gradient(to right, transparent, #66004e, transparent);
+  margin: 0;
+}
+
+/* FOOTER */
+footer {
+  background-color: #0f0f0f;
+  color: #cccccc;
+  padding: 40px 20px;
+  font-size: 14px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.footer-container h3 {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.footer-container p,
+.footer-container a {
+  color: #cccccc;
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.footer-container a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 13px;
+  color: #999999;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  footer {
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+<hr class="hr-separator">
+<footer>
+  <div class="footer-container">
+
+    <div>
+      <h3>About This Platform</h3>
+      <p>
+        An academic chemistry learning initiative designed to support
+        the Uganda Competency-Based Curriculum (CBC) for UCE and UACE learners.
+      </p>
+    </div>
+
+    <div>
+      <h3>Quick Links</h3>
+      <p><a href="#">Home</a></p>
+      <p><a href="#">Learning Resources</a></p>
+      <p><a href="#">Teacher Support</a></p>
+      <p><a href="#">Contact</a></p>
+    </div>
+
+    <div>
+<h3>Legal & Policy</h3>
+
+<p>
+  <a href="#privacy-policy" onclick="openLegal('privacy-policy')">Privacy Policy</a>
+</p>
+
+<p>
+  <a href="#terms-of-use" onclick="openLegal('terms-of-use')">Terms of Use</a>
+</p>
+
+<p>
+  <a href="#copyright-notice" onclick="openLegal('copyright-notice')">Copyright Notice</a>
+</p>
+
+    </div>
+
+    <div>
+      <h3>Contact Information</h3>
+      <p>Email: <a href="chemistryseries01@gmail.com" style="color: white;">chemistryseries01@gmail.com</a></p>
+      <p>Phone: +256787093081</p>
+	  <p>Audience: Students, Teachers & Schools</p>
+      <p>Curriculum: C.B.C UNEB Assesable areas– Uganda</p>
+  <div class="contacts">
+<a class="contacts"
+   href="https://wa.me/256787093081"
+   target="_blank"
+   title="Author">
+
+  <img src="get-logo-whatsapp-png-pictures-1.png"
+       alt="Seek help?"
+       width="30"
+       onerror="this.onerror=null; this.src='https://www.freeiconspng.com/thumbs/logo-whatsapp-png/get-logo-whatsapp-png-pictures-1.png';">
+
+</a>
+  </div>
+    </div>
+    </div>
+<!-- FLOATING CONTACT BUTTON -->
+<a href="#author-item2" class="author-float-btn">Author</a>
+
+<!-- AUTHOR SECTION -->
+<div id="author-item2" class="author-section">
+  <div class="author-avatar">
+
+    <img src="https://i.imgur.com/AQMqGix.png" alt="Author Avatar">
+  </div>
+  <div class="author-info">
+    <p class="author-name">Wasakina Julius Malongo</p>
+    <p class="author-role">Chemistry Educator</p>
+    <p>Email: <a href="mailto:wasakinajulius2@gmail.com">wasakinajulius2@gmail.com</a></p>
+    <p>Phone: <a href="tel:+256787093081">+256 787 093081</a></p>
+    <p>Website: <a href="#" target="_blank">Chemistry Learning Series.com</a></p>
+    <div class="author-socials">
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">
+  <img src="linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png"
+       alt="LinkedIn"
+       width="30"
+       onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/960px-LinkedIn_logo_initials.png';">
+
+</a>
+
+      <a href="https://twitter.com/yourprofile" target="_blank">
+  <img src="x_images.png"
+       alt="Twitter"
+       width="30"
+       onerror="this.onerror=null; this.src='https://pngimg.com/d/x_logo_PNG18.png';">
+
+</a> 
+
+<a class="contacts"
+   href="https://wa.me/256787093081"
+   target="_blank"
+   title="Author">
+
+  <img src="get-logo-whatsapp-png-pictures-1.png"
+       alt="Seek help?"
+       width="30"
+       onerror="this.onerror=null; this.src='https://www.freeiconspng.com/thumbs/logo-whatsapp-png/get-logo-whatsapp-png-pictures-1.png';">
+
+</a>    </div>
+  </div>
+</div>
+  <div class="footer-bottom">
+    © 2026 Chemistry Learning Series. All rights reserved. | Educational use only.
+  </div>
+  
+</footer>
+
+<script>
+window.addEventListener("scroll", () => {
+  const scrollPosition = window.scrollY;
+  const parallax = document.getElementById("parallax");
+  parallax.style.backgroundPositionY = -(scrollPosition * 0.4) + "px";
+});
+</script>
+<script>
+/* ========= BASIC PROTECTION ========= */
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("keydown", e => {
+  if (
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && e.key === "I") ||
+    (e.ctrlKey && e.key === "U")
+  ) {
+    e.preventDefault();
+  }
+});
+</script>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>author</title>
+  <style>
+
+	
+	.floating-loan-button {
+  position: fixed;
+  top: 65px;
+  right: 20px;
+  background: #25d366;
+  border-radius: 50%;
+  padding: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+  z-index: 9999;
+}
+
+.floating-loan-button img {
+  display: block;
+}
+  </style>
+</head>
+<body>
+
+<!-- Floating Button -->
+<a class="floating-loan-button"
+   href="https://wa.me/256787093081"
+   target="_blank"
+   title="Author">
+
+  <img src="get-logo-whatsapp-png-pictures-1.png"
+       alt="Seek help?"
+       width="30"
+       onerror="this.onerror=null; this.src='https://www.freeiconspng.com/thumbs/logo-whatsapp-png/get-logo-whatsapp-png-pictures-1.png';">
+
+</a>
+
+
+<script>
+/* ========= BASIC PROTECTION ========= */
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("keydown", e => {
+  if (
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && e.key === "I") ||
+    (e.ctrlKey && e.key === "U")
+  ) {
+    e.preventDefault();
+  }
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Running Advertisements</title>
+  <style>
+    .marquee-strip {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 10px 0;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .marquee-content {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scroll-adverts 150s linear infinite;
+      padding-left: 100%;
+    }
+
+    @keyframes scroll-adverts {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    body {
+      margin: 0;
+      padding-top: 40px; /* Add space so page content doesn't hide behind the marquee */
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Running Advertisements: Chemistry Learning Series -->
+<div class="marquee-strip">
+  <div class="marquee-content">
+
+📢 Welcome to Chemistry Learning Series — Empowering learners through the Competency-Based Curriculum (CBC)! |
+🧪 O-Level Chemistry made simple — concepts, experiments, and exam skills aligned to NCDC standards! |
+⚗️ A-Level Chemistry mastery — Physical, Organic & Inorganic Chemistry explained clearly! |
+📘 Interactive lessons, revision notes, and real-life applications of Chemistry! |
+📝 UNEB-focused exam practice questions with worked solutions! |
+🎥 Watch Chemistry experiments, demonstrations, and simulations (offline & online)! |
+📊 Track your learning progress with quizzes and competency checkpoints! |
+👩‍🔬 Learn scientific skills: observation, measurement, analysis, and problem-solving! |
+🌍 Chemistry for life — water treatment, agriculture, health, and industry explained! |
+📚 Teachers’ resource hub — lesson plans, schemes of work, and assessment tools! |
+🎓 Student support centre — ask questions and get expert guidance! |
+🧠 Build critical thinking, creativity, and innovation through Chemistry! |
+🚀 Prepare confidently for UNEB O-Level and A-Level examinations! |
+🔬 Discover modern Chemistry — nuclear energy, polymers, pharmaceuticals, and green Chemistry! |
+💡 Learn anytime, anywhere — offline or online access supported! |
+
+  </div>
+</div>
+
+  </div>
+
+  <!-- Your page content can go here -->
+  <div style="padding: 20px;">
+
+  </div>
+<script>
+/* ========= BASIC PROTECTION ========= */
+document.addEventListener("contextmenu", e => e.preventDefault());
+document.addEventListener("keydown", e => {
+  if (
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && e.key === "I") ||
+    (e.ctrlKey && e.key === "U")
+  ) {
+    e.preventDefault();
+  }
+});
+</script>
+<!-- HIDDEN LEGAL CONTENT -->
+<div id="legalSection" style="display:none; padding:20px; background:#f5f7fa; border-top:2px solid #6a1b9a;">
+
+  <h3>Legal & Policy</h3>
+
+  <div id="privacy-policy">
+    <h4>Privacy Policy</h4>
+    <p>
+      Chemistry Learning Series respects your privacy. We do not collect personal data
+      without user consent. Any information shared through contact forms is used strictly
+      for educational support and communication purposes only.
+    </p>
+  </div>
+
+  <div id="terms-of-use">
+    <h4>Terms of Use</h4>
+    <p>
+      All content provided in Chemistry Learning Series is for educational purposes only.
+      Users may not reproduce, redistribute, or sell any content without written permission
+      from the author.
+    </p>
+  </div>
+
+  <div id="copyright-notice">
+    <h4>Copyright Notice</h4>
+    <p>
+      © 2026 Chemistry Learning Series. All rights reserved.  
+      Content, images, videos, and materials are protected by copyright laws.
+    </p>
+  </div>
+
+</div>
+<script>
+function openLegal(targetId) {
+  const legal = document.getElementById("legalSection");
+
+  if (legal.style.display === "none") {
+    legal.style.display = "block";
+  }
+
+  setTimeout(() => {
+    document.getElementById(targetId).scrollIntoView({ behavior: "smooth" });
+  }, 200);
+}
+</script>
+
+</body>
+
+
+
+
+</html>
